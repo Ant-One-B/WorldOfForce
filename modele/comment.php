@@ -131,7 +131,7 @@ function addShowComment($serieId, $userId, $message) {
 
         return true;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         // En cas d'erreur, annule la transaction
         $conn->rollBack();
         return false;
@@ -158,7 +158,7 @@ function getShowComments($serieId) {
 
         return $comments;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -192,7 +192,7 @@ function deleteShowComment($commentId) {
     } catch (PDOException $e) {
         // En cas d'erreur, annuler la transaction
         $conn->rollBack();
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -228,7 +228,7 @@ function addBookComment($livreId, $userId, $message) {
 
         return true;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         // En cas d'erreur, annule la transaction
         $conn->rollBack();
         return false;
@@ -256,7 +256,7 @@ function getBookComments($livreId) {
 
         return $comments;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -290,9 +290,9 @@ function deleteBookComment($commentId) {
     } catch (PDOException $e) {
         // En cas d'erreur, annuler la transaction
         $conn->rollBack();
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
 
-// Fonction pour supprimer un commentaire en fonction de son ID
+

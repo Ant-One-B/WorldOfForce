@@ -15,7 +15,7 @@ function checkIfPseudoExist($pseudo)
         $statement->execute(['pseudo' => $pseudo]);
         $user = $statement->fetch();
     } catch (PDOException $e) {
-        addError("Erreur !: " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
     }
     return $user !== false;
 }
@@ -24,31 +24,33 @@ function checkIfPseudoExist($pseudo)
 // Connection de l'utilisateur/administrateur
 function login($pseudo, $password)
 {
-    // Vérification si l'utilisateur existe
-    if (!checkIfPseudoExist($pseudo)) {
-        addError("Nom d'utilisateur incorrect.");
-        return false;
-    }
+    try {
+        // Vérification si l'utilisateur existe
+        if (!checkIfPseudoExist($pseudo)) {
+            throw new Exception("Nom d'utilisateur non disponnible.");
+        }
 
-    // Récupération des informations de l'utilisateur
-    $util = getUserByPseudo($pseudo);
-    $mdpBD = $util['mdpU'];
-    $role = $util['role'];
-    $mail = $util['mailU'];
-    $id = $util['id_utilisateur'];
+        // Récupération des informations de l'utilisateur
+        $util = getUserByPseudo($pseudo);
+        $mdpBD = $util['mdpU'];
+        $role = $util['role'];
+        $mail = $util['mailU'];
+        $id = $util['id_utilisateur'];
 
-    if (trim($mdpBD) == trim(crypt($password, $mdpBD))) {
-        // Le mot de passe est celui de l'utilisateur dans la base de données
-        $_SESSION["pseudo"] = $pseudo;
-        $_SESSION["mail"] = $mail;
-        $_SESSION["role"] = $role;
-        $_SESSION["id"] = $id;
-        return true;
-    } else {
-        addError("Mot de passe incorrect.");
+        if (trim($mdpBD) == trim(crypt($password, $mdpBD))) {
+            // Le mot de passe est celui de l'utilisateur dans la base de données
+            $_SESSION["pseudo"] = $pseudo;
+            $_SESSION["mail"] = $mail;
+            $_SESSION["role"] = $role;
+            $_SESSION["id"] = $id;
+            return true;
+        } else {
+            throw new Exception("Mot de passe incorrect.");
+        }
+    } catch (Exception $e) {
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
-
 
 

@@ -22,7 +22,7 @@ try {
         $fileExtension = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
 
         // Taille maximale autorisée (en octets)
-        $maxFileSize = 5 * 1024 * 1024; // 5 Mo
+        $maxFileSize = 150 * 1024; // 150 Ko
 
         // Types de fichiers autorisés
         $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
@@ -34,7 +34,7 @@ try {
 
         // Vérifier la taille du fichier
         if ($_FILES['couverture']['size'] > $maxFileSize) {
-            throw new Exception("Le fichier dépasse la taille maximale autorisée.");
+            throw new Exception("Le fichier n'a pas une taille valide : 150ko maximum.");
         }
 
         // Vérifier le type de fichier
@@ -68,7 +68,7 @@ try {
             throw new Exception("Erreur : auteur invalide. L'acteur ne doit pas contenir les caractères suivants : < > { } [ ] / \\");
         }
         if (!preg_match("/^[0-9 ]{2,50}$/", $pages)) {
-            throw new Exception("Nombres pages invalide.");
+            throw new Exception("Nombres de pages invalide.");
         }
         if (preg_match("/[<>{[\]}/\\\\]/", $edition)) {
             throw new Exception("Erreur : éditeur invalide. L'éditeur ne doit pas contenir les caractères suivants : < > { } [ ] / \\");

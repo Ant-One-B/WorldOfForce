@@ -65,7 +65,7 @@ function updateUserInfo($pseudo, $region, $description)
 
         return $success;
     } catch (PDOException $e) {
-        addError("Erreur !: " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -84,7 +84,7 @@ function deleteUser($pseudo)
 
         return $success;
     } catch (PDOException $e) {
-        addError("Erreur : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }

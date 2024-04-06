@@ -42,7 +42,7 @@ function getAllShowsPoster()
         return $shows;
     } catch (PDOException $e) {
         // Gestion des erreurs
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de données : Connexion non établie.");
         return false;
     }
 }
@@ -66,7 +66,7 @@ function getShowDetails($refTmdb)
         return $show;
     } catch (PDOException $e) {
         // Gestion des erreurs
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }

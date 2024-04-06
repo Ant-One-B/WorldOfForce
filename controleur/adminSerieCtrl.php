@@ -22,7 +22,7 @@ try {
         $fileExtension = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
 
         // Taille maximale autorisée (en octets)
-        $maxFileSize = 5 * 1024 * 1024; // 5 Mo
+        $maxFileSize = 150 * 1024; // 150 Ko
 
         // Types de fichiers autorisés
         $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
@@ -65,7 +65,7 @@ try {
             throw new Exception("Acteur invalide. L'acteur ne doit pas contenir de chiffres ou les caractères spéciaux suivants : ><{[\]}/.");
         }
         if (!preg_match("/^[0-9 ]{2,50}$/", $tmdb)) {
-            throw new Exception("Erreur : identifiant tmdb invalide.");
+            throw new Exception("Référence tmdb invalide. La référence doit être un nombre");
         }
 
         // Ajout de la série avec les données validées

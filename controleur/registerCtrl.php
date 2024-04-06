@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/", $password)) {
-            throw new Exception("Mot de passe invalide.Le mot de passe doit obligatoirement contenir 1 majuscule, 1 minuscule, 1 caractére sépcial tel que : @^|`' et 1 chiffre");
+            throw new Exception("Mot de passe invalide.Le mot de passe doit obligatoirement contenir 1 majuscule, 1 minuscule, 1 caractére sépcial tel que : @$!%*?& et 1 chiffre");
         }
 
         // Vérifier si le pseudo est déjà utilisé

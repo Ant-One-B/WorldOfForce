@@ -17,7 +17,7 @@ function getAllContactMessagesWait()
         $messages = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $messages;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -39,7 +39,7 @@ function getAllContactMessages()
         $messages = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $messages;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -60,7 +60,7 @@ function saveContactMessage($mail, $objet, $message)
         $statement->execute(['mailF' => $mail, 'objetF' => $objet, 'messageF' => $message]);
         return true;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -92,7 +92,7 @@ function updateContactStatus($messageId)
         }
     } catch (PDOException $e) {
         // Gérer les erreurs de base de données
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }

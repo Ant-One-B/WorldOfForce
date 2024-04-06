@@ -25,7 +25,7 @@ function addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, $couvert
 
         return true;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -46,7 +46,7 @@ function getAllBooksCover() {
         $books = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $books;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }
@@ -68,7 +68,7 @@ function getBookDetails($id_livre) {
         $book = $statement->fetch(PDO::FETCH_ASSOC);
         return $book;
     } catch (PDOException $e) {
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
         return false;
     }
 }

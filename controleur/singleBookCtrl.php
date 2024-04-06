@@ -39,7 +39,7 @@ try {
                 throw new Exception("Une erreur s'est produite lors de l'ajout du commentaire.");
             }
         } else {
-            throw new Exception("Une erreur s'est produite lors de l'ajout du commentaire.");
+            throw new Exception("Veuillez entrer un message.");
         }
     }
 } catch (Exception $e) {
