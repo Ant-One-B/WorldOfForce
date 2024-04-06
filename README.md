@@ -4,7 +4,7 @@ Bienvenue dans l'application "World Of Force" !
 
 ## Installation
 
-1. Clonez ce répertoire dans un dossier local en utilisant la commande suivante : git clone <lien-du-repo>
+1. Clonez ce répertoire dans un dossier local en utilisant la commande suivante : git clone `lien-du-repo`
 
 2. Renommez le fichier `.env.exemple` en `.env`.
 
