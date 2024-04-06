@@ -18,5 +18,5 @@ Avant de lancer l'application, veuillez configurer les paramètres de connexion 
 
 ## Utilisation
 
-Une fois que vous avez cloné le répertoire, renommé le fichier `.env.exemple`, créé la base de données et configuré les paramètres de connexion et installé Composer vous êtes prêt à utiliser l'application.
+Une fois que vous avez cloné le répertoire, renommé le fichier `.env.exemple`, créé la base de données ,configuré les paramètres de connexion et installé Composer vous êtes prêt à utiliser l'application.
 
