@@ -2,7 +2,7 @@
 
 
 
-<h1>Bienvenue sur wolrd of force</h1>
+<h1>Bienvenue sur world of force</h1>
 <!-- pop-up des cookies -->
 <section id="cookiePopup" class="popup">
     <div class="popupContent">
