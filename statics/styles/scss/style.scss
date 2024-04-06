@@ -1,0 +1,708 @@
+// variables
+@import 'couleurs';
+@import 'mixins';
+@import 'typo';
+
+// réglages générale
+* {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'star_jediregular';
+    color: $cPrimaire;
+    text-transform: lowercase;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px auto;
+}
+
+body {
+    background-color: $cBg;
+    color: white;
+    font-family: 'raleway';
+
+    main {
+        min-height: 65vh;
+    }
+}
+
+
+// Header
+
+header {
+    background: url("../../images/fondBanniereWoF1.png") no-repeat;
+    background-size: cover;
+    padding: 10px;
+
+    .menus {
+        @include flexSpaceCenter;
+
+        figure img {
+            width: 120px;
+        }
+
+        .menuToggle {
+            display: block;
+            text-align: right;
+            margin: 20px;
+            color: #FFC000;
+
+            .menuIcon {
+                display: block;
+                font-size: 60px;
+                cursor: pointer;
+            }
+
+            #menuToggleCheckbox {
+                display: none;
+            }
+        }
+
+        .menuP,
+        .menuS {
+            display: none;
+            flex-direction: column;
+            align-content: flex-start;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+            li a {
+                font-family: 'star_jediregular';
+                font-size: 14px;
+                margin: -5px;
+            }
+        }
+
+        .menuP li a {
+            color: $cPrimaire;
+        }
+
+        .menuS li a {
+            color: white;
+        }
+
+        #menuToggleCheckbox:checked~.menuP,
+        #menuToggleCheckbox:checked~.menuS {
+            display: flex;
+            opacity: 1;
+        }
+
+    }
+  
+    @media (min-width: 1300px) {
+        .menus {
+            justify-content: center;
+
+            .menuP,
+            .menuS {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                opacity: 1;
+                transition: none;
+                li a {
+                    font-family: 'star_jediregular';
+                    font-size: 20px;
+                    margin: 15px;
+                }
+            }
+
+            .menuToggle .menuIcon {
+                display: none;
+                /* Masquer le bouton du menu sur les écrans larges */
+            }
+        }
+    }
+}  
+
+// Message déroulant
+
+.position {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+
+    .starWarsIntro {
+        width: 85%;
+        height: 50%;
+        font-family: 'raleway';
+        color: $cPrimaire;
+        background: url(../../images/espace.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+
+        p.introText {
+            position: relative;
+            max-width: 16em;
+            font-size: 35px;
+            margin: 20% auto;
+            color: #4ee;
+            opacity: 0;
+            z-index: 1;
+            text-align: center;
+            animation: intro 2s ease-out;
+        }
+
+        .mainContent {
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 50em;
+            bottom: 0;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: justify;
+            overflow: hidden;
+            transform-origin: 50% 100%;
+            transform: perspective(200px) rotateX(10deg);
+
+            :after {
+                position: absolute;
+                content: ' ';
+                top: 0;
+                bottom: 60%;
+                pointer-events: none;
+            }
+
+        }
+
+        .titleContent {
+            position: absolute;
+            top: 100%;
+            animation: scroll 120s linear 4s forwards;
+
+            .contentHeader {
+                text-align: center;
+            }
+        }
+
+        .mainLogo {
+            position: absolute;
+            width: 2.6em;
+            left: 50%;
+            top: 5vh;
+            font-size: 10em;
+            text-align: center;
+            margin-left: -1.3em;
+            opacity: 0;
+            z-index: 1;
+            animation: logo 10s ease-out 2.5s;
+
+            img {
+                max-width: 50%;
+            }
+        }
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes logo {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: -170%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .position .starWarsIntro .mainContent {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .position .starWarsIntro .mainContent {
+        font-size: 50px;
+    }
+}
+
+// carousel 
+.saga h2 {
+    display: none;
+    text-align: center;
+    color: $cPrimaire;
+}
+
+.carouselContainer {
+    display: none;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .carouselInner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            width: 100%;
+
+            img {
+                flex: 0 0 auto;
+                width: 100px;
+                height: auto;
+                margin: 0 15px;
+                transition: all 0.3s ease;
+                object-fit: contain;
+
+                &.active {
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+
+                &:not(.active) {
+                    opacity: 0.6;
+                }
+            }
+
+        }
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    .prev,
+    .next {
+        background-color: $cJedi;
+        border: none;
+        cursor: pointer;
+        color: $cPrimaire;
+        margin: 30px 20px;
+        width: 40px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .saga h2{
+        display: block;
+    }
+    .carouselContainer {
+        display: block;
+
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .carouselContainer .carousel .carouselInner img {
+        width: 120px;
+    }
+}
+
+@media screen and (min-width: 1666px) {
+    .carouselContainer .carousel .carouselInner img {
+        width: 150px;
+    }
+}
+
+// popUp Cookies
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    .popupContent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $cBg;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        p {
+            margin-bottom: 5px;
+            color: white;
+
+            a {
+                color: $cPrimaire;
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: $cJedi;
+            color: $cPrimaire;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
+
+// Footer
+
+footer {
+    background: url("../../images/fondFooterWoF1.png") no-repeat;
+    background-size: cover;
+    padding: 10px;
+    margin-top: 20px;
+    align-items: center;
+
+    .menuF {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px;
+    }
+
+    figure img {
+        width: 120px;
+
+    }
+
+    p {
+        color: $cJedi;
+
+    }
+}
+
+.menuL {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+
+    li a {
+        font-family: 'star_jediregular';
+        font-size: 18px;
+    }
+}
+
+.menuFP li a {
+    color: $cPrimaire;
+}
+
+.menuFS li a {
+    color: white;
+}
+
+// grille
+
+.gridContainer {
+    display: flex;
+    justify-content: center;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* Trois colonnes de largeur égale */
+        gap: 10px;
+        /* Espace entre les éléments */
+        margin-bottom: 30px;
+    }
+
+    .poster {
+        width: 200px;
+        /* Largeur de la couverture */
+        height: auto;
+        /* Hauteur de la couverture */
+        object-fit: cover;
+        /* Ajustement de la taille de l'image pour remplir complètement le conteneur */
+        transition: 0.3s ease;
+        /* Transition fluide pour l'effet de survol */
+        margin: 0 20px;
+
+        &:hover {
+            box-shadow: 3px 4px 8px rgba(212, 204, 204, 0.8);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+            /* Trois colonnes pour les écrans plus larges */
+        }
+    }
+
+    @media screen and (min-width: 980px) {
+
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+            /* Trois colonnes pour les écrans plus larges */
+        }
+    }
+
+    @media screen and (min-width: 1250px) {
+
+        .grid {
+            grid-template-columns: repeat(5, 1fr);
+            /* Trois colonnes pour les écrans plus larges */
+        }
+    }
+}
+
+
+
+// archive
+
+.archive {
+    @include message;
+}
+
+// Profil    
+.profil {
+    margin: 10px 20px;
+
+    p,
+    a {
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-family: 'star_jediregular';
+        color: $cPrimaire;
+    }
+
+    a {
+        color: $cPrimaire;
+    }
+}
+
+.modal {
+    display : none;
+    text-align: center;
+    font-family:'star_jediregular';
+    color: $cPrimaire;
+
+}
+
+.delete{
+    margin : 20px;
+    padding : 5px;
+    background-color: $cSith;
+    font-family:'star_jediregular' ;
+    font-size: 18px;
+}
+
+// Message reçus
+table {
+    border: 2px solid $cPrimaire;
+    margin: 20px 20px;
+    border-spacing: 0;
+
+    tbody tr td {
+        vertical-align: top;
+        padding: 10px;
+        border: 1px solid #e7dddd1f;
+    }
+
+}
+
+// single page film/série/livre unique
+.details p {
+    margin: 15px 20px;
+}
+
+.poster {
+    display: flex;
+    justify-content: center;
+}
+
+.poster img {
+    width: 300px;
+    height: auto;
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .details {
+
+        display: grid;
+        grid-template-columns: auto 1fr;
+        /* Une colonne pour l'image et une pour les détails */
+        grid-column-gap: 20px;
+        /* Espace entre les colonnes */
+        align-items: start;
+        /* Alignement vertical des éléments */
+        margin: 20px;
+    }
+
+    .poster {
+        grid-row: 1 / span 7;
+        /* Couvre 7 lignes pour aligner avec les paragraphes */
+    }
+
+}
+
+.comments {
+
+   
+    h2 {
+        text-align: center;
+    }
+
+    .com,
+    .noCom {
+        border: 1px solid $cPrimaire;
+        margin: 30px 40px;
+        padding: 10px;
+            
+    }
+
+    .com p {
+        margin: 10px 15px;
+    }
+
+    .com p:last-of-type {
+        text-align: end;
+    }
+    
+}
+
+
+// mentions 
+
+.mentions {
+    margin: 20px 30px;
+
+    p {
+        margin: 10px 20px;
+    }
+}
+
+
+// 404 / Confirm
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    overflow: hidden;
+    /* Empêcher la barre de défilement */
+}
+
+.p404 p {
+    margin: 30px auto;
+    text-align: center;
+    font-size: 1.3rem;
+
+    a {
+        color: $cPrimaire;
+    }
+}
+
+
+// cta
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .btn {
+        min-width: 340px;
+        text-align: center;
+        margin: 20px;
+        color: $cPrimaire;
+        font-family: 'star_jediregular';
+    }
+}
+
+// Erreurs
+
+.errorMessages {
+    border: 1px solid $cSith;
+    padding: 10px;
+    color: $cPrimaire;
+    text-align: center;
+    margin: 30px;
+}
+
+.nop {
+    text-align: center;
+    border: 2px solid $cSith;
+    font-family: 'star_jediregular';
+    padding: 10px;
+    margin : 30px;
+}
+// Formulaires
+@include form;
+
+@include btn;
+
+#del{
+    color: $cPrimaire;
+    background-color:$cSith;
+    min-width: fit-content;
+    max-width: 150px;
+    
+}
