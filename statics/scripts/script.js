@@ -15,6 +15,7 @@ prevButton.addEventListener('click', prevSlide);
 
 function nextSlide() {
   currentIndex++;
+  
   if (currentIndex >= totalSlides) {
     currentIndex = 0; // Revenir à la première image
   }
@@ -29,12 +30,18 @@ function prevSlide() {
   updateSlidePosition();
 }
 
+//const updateSlidePosition = () => {
+
 function updateSlidePosition() {
   if (currentIndex >= visibleSlides && currentIndex < totalSlides - visibleSlides) {
     let newPosition = -(currentIndex - visibleSlides) * slideWidth;
     carouselInner.style.transition = 'transform 0.5s ease';
     carouselInner.style.transform = `translateX(${newPosition}px)`;
   }
+
+  // for (const item of slides) {
+  //   item.classList.contains('active') ? item.classList.remove('active') : '';
+  // }
 
   for (let i = 0; i < totalSlides; i++) {
     slides[i].classList.remove('active');
