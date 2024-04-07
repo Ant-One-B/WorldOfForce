@@ -463,7 +463,7 @@ footer {
     .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* Trois colonnes de largeur égale */
+        /* Deux colonnes de largeur égale */
         gap: 20px;
         /* Espace entre les éléments */
         margin : 30px 10px
@@ -492,13 +492,19 @@ footer {
             grid-template-columns: repeat(3, 1fr);
             /* Trois colonnes pour les écrans plus larges */
         }
+        .poster {
+            width: 150px;
+        }
     }
 
     @media screen and (min-width: 980px) {
 
         .grid {
             grid-template-columns: repeat(4, 1fr);
-            /* Trois colonnes pour les écrans plus larges */
+            /* Quatre colonnes pour les écrans plus larges */
+        }
+        .poster {
+            width: 180px;
         }
     }
 
@@ -506,7 +512,10 @@ footer {
 
         .grid {
             grid-template-columns: repeat(5, 1fr);
-            /* Trois colonnes pour les écrans plus larges */
+            /* cinq colonnes pour les écrans plus larges */
+        }
+        .poster {
+            width: 200px;
         }
     }
 }
