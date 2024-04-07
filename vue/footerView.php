@@ -12,6 +12,7 @@
                 <!-- vérification du role, si admin les archives sont visibles -->
                 <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "Admin"): ?>
                     <li><a href="?route=archive">archive</a></li>
+                    <li><a href="?route=users">membres</a></li>
                 <?php endif; ?>
             </ul>
 

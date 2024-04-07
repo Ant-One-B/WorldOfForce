@@ -90,3 +90,53 @@ function deleteUser($pseudo)
 }
 
 
+function getUsersWithRoles() {
+    $conn = connectPDO();
+    if (!$conn) {
+        addError("Erreur de base de données : Connexion non établie.");
+        return false;
+    }
+
+    try {
+        $query = "SELECT id_utilisateur, pseudoU, mailU, role FROM utilisateur";
+        $statement = $conn->query($query);
+        $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $users;
+    } catch (PDOException $e) {
+        addError("Erreur de base de données : " . $e->getMessage());
+        return false;
+    }
+}
+
+
+function updateUserRole($userId, $newRole) {
+    $conn = connectPDO();
+    if (!$conn) {
+        addError("Erreur de base de données : Connexion non établie.");
+        return false;
+    }
+
+    try {
+        // Vérifier si le nouveau rôle est valide (peut-être à faire dans le contrôleur)
+        if (!in_array($newRole, ['Membre', 'Admin'])) {
+            throw new Exception("Le nouveau rôle spécifié n'est pas valide.");
+        }
+
+        // Préparer et exécuter la requête de mise à jour du rôle de l'utilisateur
+        $query = "UPDATE utilisateur SET role = :new_role WHERE id_utilisateur = :user_id";
+        $statement = $conn->prepare($query);
+        $statement->bindParam(':new_role', $newRole, PDO::PARAM_STR);
+        $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $success = $statement->execute();
+
+        // Retourner true si la mise à jour a réussi, sinon false
+        return $success;
+    } catch (PDOException $e) {
+        addError("Erreur de base de données : " . $e->getMessage());
+        return false;
+    } catch (Exception $e) {
+        addError($e->getMessage());
+        return false;
+    }
+}

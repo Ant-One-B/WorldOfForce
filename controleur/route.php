@@ -64,6 +64,9 @@ if (isset($_GET["route"])) {
         case 'archive':
             $route = include __DIR__ . '/archiveCtrl.php';
             break;
+        case 'users':
+            $route = include __DIR__ . '/usersCtrl.php';
+            break;
         case 'mentions':
             $route = include __DIR__ . '/../vue/mentions.php';
             break;

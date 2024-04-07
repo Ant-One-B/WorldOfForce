@@ -38,7 +38,7 @@ $comments = getShowComments($serieId); ?>
                 <p class='dateC'>Date :
                     <?= $comment['dateC'] ?>
                 </p>
-                <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "Admin"): ?>
+                <?php if ((isset($_SESSION["role"]) && $_SESSION["role"] === "Admin" || (isset($_SESSION["pseudo"]) && $_SESSION["pseudo"] === $comment['pseudoU']))): ?>
                     <!-- Bouton de suppression -->
                     <form action="?route=serieUnique&id=<?= $_GET['id'] ?>&ref=<?= $_GET['ref'] ?>" method="post" >
                         <input type="hidden" name="commentId" value="<?= $comment['id_commentaire'] ?>">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 06 avr. 2024 à 13:14
+-- Généré le : dim. 07 avr. 2024 à 11:55
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -53,7 +53,8 @@ INSERT INTO `commentaire` (`id_commentaire`, `messageC`, `dateC`, `id_utilisateu
 (19, 'areetrgra', '2024-04-06', 2),
 (21, 'sqafzafaegagagea', '2024-04-06', 2),
 (22, 'ezreztezt', '2024-04-06', 2),
-(24, 'jbeuipgzbzirhbirzb', '2024-04-06', 2);
+(24, 'jbeuipgzbzirhbirzb', '2024-04-06', 2),
+(27, 'uipbrzguzrbpoz', '2024-04-07', 7);
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,8 @@ CREATE TABLE `commentaire_livre` (
 INSERT INTO `commentaire_livre` (`id_commentaire`, `id_livre`) VALUES
 (6, 4),
 (7, 4),
-(5, 5);
+(5, 5),
+(27, 5);
 
 -- --------------------------------------------------------
 
@@ -260,7 +262,8 @@ CREATE TABLE `utilisateur` (
 INSERT INTO `utilisateur` (`id_utilisateur`, `pseudoU`, `mailU`, `mdpU`, `region`, `description`, `role`) VALUES
 (1, 'marion', 'divers.autres@outlook.fr', '$2y$10$viDfxx.q5o2cfMI/LF35wuLDxgtcifrcSJguAQjozYDKFa3l4dc5.', NULL, NULL, 'Membre'),
 (2, 'Fenrae', 'antoine.boeraeve@gmail.com', '$2y$10$jZUmGILlLcdmW.WMNjfFxe063MVElBJTvQmFcyR5uKYMMW9ZDtfnC', 'Morbihan', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem.', 'Admin'),
-(6, 'Thierry', 'thierry.bouedo@ac-rennes.fr', '$2y$10$dw2niRG3LAg4/1RrX1DRiuv/hWJwh4zMbxJ3iw891aesodzs/SIsy', 'bretagne', 'formateur kercode', 'Admin');
+(6, 'Thierry', 'thierry.bouedo@ac-rennes.fr', '$2y$10$dw2niRG3LAg4/1RrX1DRiuv/hWJwh4zMbxJ3iw891aesodzs/SIsy', 'bretagne', 'formateur kercode', 'Admin'),
+(7, 'Test', 'test@kercode.com', '$2y$10$FEcKUVBy3a1.OBqX/dL1kucRbcMOv/8str5o3lbANAjeU22ZcIOcu', NULL, NULL, 'Membre');
 
 --
 -- Index pour les tables déchargées
@@ -336,7 +339,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
-  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `contact`
@@ -366,7 +369,7 @@ ALTER TABLE `serie`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Contraintes pour les tables déchargées

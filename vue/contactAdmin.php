@@ -5,16 +5,6 @@
 <h1>Messages de contact</h1>
 <?php if (!empty($messages)): ?>
     <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Objet</th>
-                <th>Message</th>
-                <th>Date</th>
-                <th>Action</th>
-            </tr>
-        </thead>
         <tbody>
             <!-- affichage de tout les messages ayant le statut : "wait" -->
             <?php foreach ($messages as $message): ?>

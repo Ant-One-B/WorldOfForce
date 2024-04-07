@@ -104,7 +104,7 @@ header {
         }
 
     }
-  
+
     @media (min-width: 1300px) {
         .menus {
             justify-content: center;
@@ -116,6 +116,7 @@ header {
                 justify-content: center;
                 opacity: 1;
                 transition: none;
+
                 li a {
                     font-family: 'star_jediregular';
                     font-size: 20px;
@@ -129,7 +130,7 @@ header {
             }
         }
     }
-}  
+}
 
 // Message déroulant
 
@@ -339,9 +340,10 @@ header {
 }
 
 @media screen and (min-width: 1200px) {
-    .saga h2{
+    .saga h2 {
         display: block;
     }
+
     .carouselContainer {
         display: block;
 
@@ -536,34 +538,41 @@ footer {
 }
 
 .modal {
-    display : none;
+    display: none;
     text-align: center;
-    font-family:'star_jediregular';
+    font-family: 'star_jediregular';
     color: $cPrimaire;
 
 }
 
-.delete{
-    margin : 20px;
-    padding : 5px;
+.delete {
+    margin: 20px;
+    padding: 5px;
     background-color: $cSith;
-    font-family:'star_jediregular' ;
+    font-family: 'star_jediregular';
     font-size: 18px;
 }
 
 // Message reçus
 table {
     border: 2px solid $cPrimaire;
-    margin: 20px 20px;
+    margin: 20px;
     border-spacing: 0;
 
     tbody tr td {
         vertical-align: top;
         padding: 10px;
         border: 1px solid #e7dddd1f;
+
+        input,
+        button {
+            min-width: fit-content;
+            max-width: 150px;
+        }
     }
 
 }
+
 
 // single page film/série/livre unique
 .details p {
@@ -605,7 +614,7 @@ table {
 
 .comments {
 
-   
+
     h2 {
         text-align: center;
     }
@@ -615,7 +624,7 @@ table {
         border: 1px solid $cPrimaire;
         margin: 30px 40px;
         padding: 10px;
-            
+
     }
 
     .com p {
@@ -625,7 +634,7 @@ table {
     .com p:last-of-type {
         text-align: end;
     }
-    
+
 }
 
 
@@ -692,17 +701,18 @@ table {
     border: 2px solid $cSith;
     font-family: 'star_jediregular';
     padding: 10px;
-    margin : 30px;
+    margin: 30px;
 }
+
 // Formulaires
 @include form;
 
 @include btn;
 
-#del{
+#del {
     color: $cPrimaire;
-    background-color:$cSith;
+    background-color: $cSith;
     min-width: fit-content;
     max-width: 150px;
-    
+
 }
