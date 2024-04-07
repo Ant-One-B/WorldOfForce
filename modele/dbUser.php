@@ -84,7 +84,8 @@ function deleteUser($pseudo)
 
         return $success;
     } catch (PDOException $e) {
-        addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
+        // addError("Erreur de base de donnée, veuillez réessayer ultérieurement.");
+        addError("Erreur PDO lors de la suppression : " . $e->getMessage());
         return false;
     }
 }

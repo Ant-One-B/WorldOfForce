@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 07 avr. 2024 à 11:55
+-- Généré le : dim. 07 avr. 2024 à 12:43
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -53,8 +53,7 @@ INSERT INTO `commentaire` (`id_commentaire`, `messageC`, `dateC`, `id_utilisateu
 (19, 'areetrgra', '2024-04-06', 2),
 (21, 'sqafzafaegagagea', '2024-04-06', 2),
 (22, 'ezreztezt', '2024-04-06', 2),
-(24, 'jbeuipgzbzirhbirzb', '2024-04-06', 2),
-(27, 'uipbrzguzrbpoz', '2024-04-07', 7);
+(24, 'jbeuipgzbzirhbirzb', '2024-04-06', 2);
 
 -- --------------------------------------------------------
 
@@ -95,8 +94,7 @@ CREATE TABLE `commentaire_livre` (
 INSERT INTO `commentaire_livre` (`id_commentaire`, `id_livre`) VALUES
 (6, 4),
 (7, 4),
-(5, 5),
-(27, 5);
+(5, 5);
 
 -- --------------------------------------------------------
 
@@ -262,8 +260,7 @@ CREATE TABLE `utilisateur` (
 INSERT INTO `utilisateur` (`id_utilisateur`, `pseudoU`, `mailU`, `mdpU`, `region`, `description`, `role`) VALUES
 (1, 'marion', 'divers.autres@outlook.fr', '$2y$10$viDfxx.q5o2cfMI/LF35wuLDxgtcifrcSJguAQjozYDKFa3l4dc5.', NULL, NULL, 'Membre'),
 (2, 'Fenrae', 'antoine.boeraeve@gmail.com', '$2y$10$jZUmGILlLcdmW.WMNjfFxe063MVElBJTvQmFcyR5uKYMMW9ZDtfnC', 'Morbihan', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem.', 'Admin'),
-(6, 'Thierry', 'thierry.bouedo@ac-rennes.fr', '$2y$10$dw2niRG3LAg4/1RrX1DRiuv/hWJwh4zMbxJ3iw891aesodzs/SIsy', 'bretagne', 'formateur kercode', 'Admin'),
-(7, 'Test', 'test@kercode.com', '$2y$10$FEcKUVBy3a1.OBqX/dL1kucRbcMOv/8str5o3lbANAjeU22ZcIOcu', NULL, NULL, 'Membre');
+(6, 'Thierry', 'thierry.bouedo@ac-rennes.fr', '$2y$10$dw2niRG3LAg4/1RrX1DRiuv/hWJwh4zMbxJ3iw891aesodzs/SIsy', 'bretagne', 'formateur kercode', 'Admin');
 
 --
 -- Index pour les tables déchargées
@@ -379,27 +376,27 @@ ALTER TABLE `utilisateur`
 -- Contraintes pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
-  ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`);
+  ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `commentaire_film`
 --
 ALTER TABLE `commentaire_film`
-  ADD CONSTRAINT `commentaire_film_ibfk_1` FOREIGN KEY (`id_commentaire`) REFERENCES `commentaire` (`id_commentaire`),
+  ADD CONSTRAINT `commentaire_film_ibfk_1` FOREIGN KEY (`id_commentaire`) REFERENCES `commentaire` (`id_commentaire`) ON DELETE CASCADE,
   ADD CONSTRAINT `commentaire_film_ibfk_2` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`);
 
 --
 -- Contraintes pour la table `commentaire_livre`
 --
 ALTER TABLE `commentaire_livre`
-  ADD CONSTRAINT `commentaire_livre_ibfk_1` FOREIGN KEY (`id_commentaire`) REFERENCES `commentaire` (`id_commentaire`),
+  ADD CONSTRAINT `commentaire_livre_ibfk_1` FOREIGN KEY (`id_commentaire`) REFERENCES `commentaire` (`id_commentaire`) ON DELETE CASCADE,
   ADD CONSTRAINT `commentaire_livre_ibfk_2` FOREIGN KEY (`id_livre`) REFERENCES `livre` (`id_livre`);
 
 --
 -- Contraintes pour la table `commentaire_serie`
 --
 ALTER TABLE `commentaire_serie`
-  ADD CONSTRAINT `commentaire_serie_ibfk_1` FOREIGN KEY (`id_commentaire`) REFERENCES `commentaire` (`id_commentaire`),
+  ADD CONSTRAINT `commentaire_serie_ibfk_1` FOREIGN KEY (`id_commentaire`) REFERENCES `commentaire` (`id_commentaire`) ON DELETE CASCADE,
   ADD CONSTRAINT `commentaire_serie_ibfk_2` FOREIGN KEY (`id_serie`) REFERENCES `serie` (`id_serie`);
 COMMIT;
 

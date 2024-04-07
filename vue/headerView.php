@@ -21,7 +21,7 @@ require_once __DIR__ . '/headView.php';
                                         <!-- si une session n'a pas de pseudo défini : -->
                                         <?php if (!isset($_SESSION["pseudo"])): ?>
                                                 <li><a href="?route=inscription">S'inscrire</a></li>
-                                                <li><a href="?route=connexion">Se connecter</a></li>
+                                                <li><a href="?route=connexion">Se&nbsp;connecter</a></li>
                                         <?php endif; ?>
                                         <!-- Si une session à un pseudo défini : -->
                                         <?php if (isset($_SESSION["pseudo"])): ?>

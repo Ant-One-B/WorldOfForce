@@ -462,15 +462,16 @@ footer {
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         /* Trois colonnes de largeur égale */
-        gap: 10px;
+        gap: 20px;
         /* Espace entre les éléments */
-        margin-bottom: 30px;
+        margin : 30px 10px
+
     }
 
     .poster {
-        width: 200px;
+        width: 120px;
         /* Largeur de la couverture */
         height: auto;
         /* Hauteur de la couverture */
@@ -714,5 +715,4 @@ table {
     background-color: $cSith;
     min-width: fit-content;
     max-width: 150px;
-
 }
