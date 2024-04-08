@@ -57,40 +57,40 @@
 
 <section class="saga">
     <h2>La saga principale</h2>
-<div class="carouselContainer">
-    <div class="carousel">
+    <div class="carouselContainer">
+        <div class="carousel">
 
-        <div class="carouselInner">
-            <img src="statics/images/upload/episodeI.jpg" alt="Star wars la menace fantome">
-            <img src="statics/images/upload/episodeII.jpg" alt="Star wars l'attaque des clones">
-            <img src="statics/images/upload/episodeIII.jpg" alt="star wars la revanche des siths">
-            <img src="statics/images/upload/episodeIV.jpg" alt="Star wars un nouvel espoir">
-            <img src="statics/images/upload/episodeV.jpg" alt="Star wars l'empire contre-attaque">
-            <img src="statics/images/upload/episodeVI.jpg" alt="Star wars le retour du jedi">
-            <img src="statics/images/upload/episodeVII.jpg" alt="Star wars le reveil de la force">
-            <img src="statics/images/upload/episodeVIII.jpg" alt="Star wars les dernier jedi">
-            <img src="statics/images/upload/episodeIX.jpg" alt="Star wars l'ascension de Skywalker">
-        </div>
-        <div class="controls">
-            <button class="prev">précédent</button>
-            <button class="next">suivant</button>
+            <div class="carouselInner">
+                <img src="statics/images/upload/episodeI.jpg" alt="Star wars la menace fantome">
+                <img src="statics/images/upload/episodeII.jpg" alt="Star wars l'attaque des clones">
+                <img src="statics/images/upload/episodeIII.jpg" alt="star wars la revanche des siths">
+                <img src="statics/images/upload/episodeIV.jpg" alt="Star wars un nouvel espoir">
+                <img src="statics/images/upload/episodeV.jpg" alt="Star wars l'empire contre-attaque">
+                <img src="statics/images/upload/episodeVI.jpg" alt="Star wars le retour du jedi">
+                <img src="statics/images/upload/episodeVII.jpg" alt="Star wars le reveil de la force">
+                <img src="statics/images/upload/episodeVIII.jpg" alt="Star wars les dernier jedi">
+                <img src="statics/images/upload/episodeIX.jpg" alt="Star wars l'ascension de Skywalker">
+            </div>
+            <div class="controls">
+                <button class="prev btn">précédent</button>
+                <button class="next btn">suivant</button>
+            </div>
         </div>
     </div>
-</div>
 </section>
 <!-- call to action -->
 <div class='cta'>
-    <a href="?route=films">
-        <p class="btn">Envie de découvrir les films ?</p>
+    <a href="?route=films" class="btn">
+        Envie de découvrir les films ?
     </a>
-    <a href="?route=series">
-        <p class="btn">Envie de découvrir les séries ?</p>
+    <a href="?route=series" class="btn">
+        Envie de découvrir les séries ?
     </a>
-    <a href="?route=livres">
-        <p class="btn">Envie de découvrir les livres ?</p>
+    <a href="?route=livres" class="btn">
+        Envie de découvrir les livres ?
     </a>
-    <a href="?route=contact">
-        <p class="btn">Nous contacter</p>
+    <a href="?route=contact" class="btn">
+        Nous contacter
     </a>
 
 </div>

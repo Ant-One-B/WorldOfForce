@@ -296,12 +296,17 @@ header .menus #menuToggleCheckbox:checked ~ .menuS {
 }
 .carouselContainer .prev,
 .carouselContainer .next {
-  background-color: #672470;
-  border: none;
+  background-color: #FFC000;
+  border: 1px solid #FFC000;
   cursor: pointer;
-  color: #FFC000;
+  color: #5E65FF;
   margin: 30px 20px;
   width: 40px;
+}
+.carouselContainer .prev:hover,
+.carouselContainer .next:hover {
+  background-color: #5E65FF;
+  color: #FFC000;
 }
 
 @media screen and (min-width: 1200px) {
@@ -351,7 +356,7 @@ header .menus #menuToggleCheckbox:checked ~ .menuS {
 }
 .popup .popupContent button {
   padding: 10px 20px;
-  background-color: #672470;
+  background-color: #5E65FF;
   color: #FFC000;
   border: none;
   border-radius: 5px;
@@ -378,7 +383,7 @@ footer figure img {
   width: 120px;
 }
 footer p {
-  color: #672470;
+  color: #5E65FF;
 }
 
 .menuL {
@@ -491,20 +496,35 @@ footer p {
   font-size: 18px;
 }
 
-table {
+.tableContainer {
   border: 2px solid #FFC000;
   margin: 20px;
+  overflow: scroll;
+  width: calc(100% - 40px);
+  position: relative;
+}
+
+table {
   border-spacing: 0;
 }
 table tbody tr td {
-  vertical-align: top;
   padding: 10px;
   border: 1px solid rgba(231, 221, 221, 0.1215686275);
+  width: 20%;
+}
+table tbody tr td:first-child {
+  width: 20px;
+}
+table tbody tr td .text {
+  min-width: 200px;
 }
 table tbody tr td input,
 table tbody tr td button {
   min-width: fit-content;
   max-width: 150px;
+}
+table tbody tr td form {
+  min-width: auto;
 }
 
 .details p {
@@ -587,8 +607,6 @@ table tbody tr td button {
   min-width: 340px;
   text-align: center;
   margin: 20px;
-  color: #FFC000;
-  font-family: "star_jediregular";
 }
 
 .errorMessages {
@@ -649,13 +667,27 @@ fieldset {
 
 .btn {
   padding: 12px;
-  background-color: #672470;
+  background-color: #FFC000;
+  color: #1F1F1F;
+  border: 1px solid #FFC000;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "star_jediregular";
+}
+.btn:hover {
+  background-color: #1F1F1F;
   color: #FFC000;
 }
 
 #del {
-  color: #FFC000;
+  color: #1F1F1F;
   background-color: #FF0000;
   min-width: fit-content;
   max-width: 150px;
+  border: 1px solid #FF0000;
+  cursor: pointer;
+}
+#del:hover {
+  color: #FF0000;
+  background-color: #1F1F1F;
 }/*# sourceMappingURL=style.css.map */

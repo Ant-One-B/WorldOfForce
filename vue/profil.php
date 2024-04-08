@@ -14,7 +14,7 @@
         <?= $util['description'] ?>
     </p>
     <a href="?route=modifierprofil">
-        <p>Mettre à jour le profil</p>
+        Mettre à jour le profil
     </a>
 </section>
 
@@ -24,14 +24,14 @@
         <!-- <span class="close" id="closeModal">&times;</span> -->
         <p>Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.</p>
         <form id="deleteAccountForm" action="?route=profil" method="post">
-            <button type="submit" class="delete" name="supprimerCompte">oui, supprimer mon compte</button>
-            <button type="button" class="delete" id="cancelDelete">Annuler</button>
+            <button type="submit" class="delete btn" name="supprimerCompte">oui, supprimer mon compte</button>
+            <button type="button" class="delete btn" id="cancelDelete">Annuler</button>
         </form>
     </div>
 </div>
 
 <!-- Bouton pour ouvrir la boîte de dialogue modale -->
-<button id="openModal" class="delete">Supprimer mon compte</button>
+<button id="openModal" class="delete btn">Supprimer mon compte</button>
 
 
 

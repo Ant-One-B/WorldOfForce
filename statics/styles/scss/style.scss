@@ -330,12 +330,16 @@ header {
 
     .prev,
     .next {
-        background-color: $cJedi;
-        border: none;
+        background-color: $cPrimaire;
+        border: 1px solid $cPrimaire;
         cursor: pointer;
-        color: $cPrimaire;
+        color: $cJedi;
         margin: 30px 20px;
         width: 40px;
+        &:hover{
+            background-color: $cJedi;
+            color: $cPrimaire;
+        }
     }
 }
 
@@ -564,20 +568,34 @@ footer {
 }
 
 // Message reçus
-table {
+.tableContainer{
     border: 2px solid $cPrimaire;
     margin: 20px;
+    overflow: scroll;
+    width: calc(100% - 40px);
+    position: relative;
+}
+table {
     border-spacing: 0;
-
     tbody tr td {
-        vertical-align: top;
+        // vertical-align: top;
         padding: 10px;
         border: 1px solid #e7dddd1f;
+        width: 20%;
+        &:first-child{
+            width: 20px;
+        }
+        .text{
+            min-width: 200px;
+        }
 
         input,
         button {
             min-width: fit-content;
             max-width: 150px;
+        }
+        form{
+            min-width: auto;
         }
     }
 
@@ -691,8 +709,7 @@ table {
         min-width: 340px;
         text-align: center;
         margin: 20px;
-        color: $cPrimaire;
-        font-family: 'star_jediregular';
+        
     }
 }
 
@@ -720,8 +737,14 @@ table {
 @include btn;
 
 #del {
-    color: $cPrimaire;
+    color: $cBg;
     background-color: $cSith;
     min-width: fit-content;
     max-width: 150px;
+    border: 1px solid $cSith;
+    cursor: pointer;
+    &:hover {
+        color: $cSith;
+        background-color: $cBg;
+    }
 }

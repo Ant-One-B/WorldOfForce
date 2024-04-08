@@ -39,7 +39,7 @@ $comments = getMovieComments($filmId);
         <!-- Bouton de suppression -->
         <form action="?route=filmUnique&id=<?= $_GET['id'] ?>&ref=<?= $_GET['ref'] ?>" method="post">
             <input type="hidden" name="commentId" value="<?= $comment['id_commentaire'] ?>">
-            <input type="submit" id="del" class="delCom" value="Supprimer">
+            <input type="submit" id="del" class="delCom btn" value="Supprimer">
         </form>
         <?php endif; ?>
     </div>

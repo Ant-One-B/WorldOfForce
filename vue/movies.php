@@ -15,7 +15,7 @@ if (!$films) {
             // utilisation de foreach pour afficher les affiches des films présent dans la base de donnée
             foreach ($films as $film) {
                 // Ajout de id et ref à l'url pour récupérer l'id et la ref en GET sur la page du film.
-                echo "<p><a href='?route=filmUnique&id=" . $film['id_film'] . "&ref=" . $film['ref_tmdb'] . "'><img src='" . $film['afficheF'] . "' alt='" . $film['titreF'] . "' class='poster'></a></p>";
+                echo "<a href='?route=filmUnique&id=" . $film['id_film'] . "&ref=" . $film['ref_tmdb'] . "'><img src='" . $film['afficheF'] . "' alt='" . $film['titreF'] . "' class='poster'></a>";
             }
         }
         ?>

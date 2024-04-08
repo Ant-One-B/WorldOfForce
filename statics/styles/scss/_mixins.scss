@@ -66,11 +66,19 @@
 @mixin btn{
     .btn {
         padding: 12px;
-        background-color: $cJedi;
-        color: $cPrimaire;
-        
-      }
+        background-color: $cPrimaire;
+        color: $cBg;
+        border: 1px solid $cPrimaire;
+        cursor:pointer;
+        border-radius: 4px;
+        font-family: 'star_jediregular';
+        &:hover{
+          background-color: $cBg;
+          color: $cPrimaire;
+        }
 }
+}
+
 
 @mixin message{
     border: 2px solid $cPrimaire;

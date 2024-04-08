@@ -14,7 +14,7 @@ if (!$livres) {
             // Utilisation d'un foreach pour afficher toutes les couvertures de livres
             foreach ($livres as $livre) {
                 // écriture de l'url pour avoir accés a l'id et la ref du livre sur la page suivante.
-                echo "<p><a href='?route=livreUnique&id=" . $livre['id_livre'] . "'><img src='" . $livre['couvertureL'] . "' alt='" . $livre['titreL'] . "' class='poster'></a></p>";
+                echo "<a href='?route=livreUnique&id=" . $livre['id_livre'] . "'><img src='" . $livre['couvertureL'] . "' alt='" . $livre['titreL'] . "' class='poster'></a>";
             }
         } 
         ?>

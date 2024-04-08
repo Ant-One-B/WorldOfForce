@@ -14,7 +14,7 @@ if (!$shows) {
             // utilisation de foreach pour afficher les affiches des séries présentes dans la base de donnée
             foreach ($shows as $shows) {
                 // Ajout de id et ref à l'url pour récupérer l'id et la ref en GET sur la page de la série.
-                echo "<p><a href='?route=serieUnique&id=" . $shows['id_serie'] . "&ref=" . $shows['ref_tmdb'] . "'><img src='" . $shows['afficheS'] . "' alt='" . $shows['titreS'] . "' class='poster'></a></p>";
+                echo "<a href='?route=serieUnique&id=" . $shows['id_serie'] . "&ref=" . $shows['ref_tmdb'] . "'><img src='" . $shows['afficheS'] . "' alt='" . $shows['titreS'] . "' class='poster'></a>";
             }
         }
         ?>

@@ -31,7 +31,7 @@
                     <td>
                         <form action="?route=users" method="post">
                             <input type="hidden" name="pseudoToDelete" value="<?= $user['pseudoU'] ?>">
-                            <button type="submit" id="del">Bannir</button>
+                            <button type="submit" id="del" class="btn">Bannir</button>
                         </form>
                     </td>
                 </tr>
