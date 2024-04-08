@@ -1,6 +1,12 @@
 <?php
 include __DIR__ . '/../modele/dbUser.php';
 
+
+if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
+    include __DIR__ . "/../vue/404.php";
+    exit;
+}
+
 try {
     // Appeler la fonction pour récupérer la liste des utilisateurs avec leurs rôles
     $users = getUsersWithRoles();

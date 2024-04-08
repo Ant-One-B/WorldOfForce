@@ -2,6 +2,12 @@
 
 include __DIR__ . '/../modele/contact.php'; // Inclure le modèle pour accéder aux fonctions du contact
 
+
+if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
+    include __DIR__ . "/../vue/404.php";
+    exit;
+}
+
 try {
     // Récupérer tous les messages de contact depuis la base de données
     $messages = getAllContactMessagesWait();

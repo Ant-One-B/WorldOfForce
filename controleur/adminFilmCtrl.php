@@ -1,6 +1,11 @@
 <?php
 include __DIR__ . '/../modele/movie.php';
 
+if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
+    include __DIR__ . "/../vue/404.php";
+    exit;
+}
+
 try {
     // Vérification si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
