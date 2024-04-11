@@ -46,4 +46,4 @@ include __DIR__ . '/headView.php';
 
         </header>
         <main>
-                <?php include __DIR__ . '/../controleur/errorsCtrl.php'; ?>
+                <?php include __DIR__ . '/../controleur/messagesCtrl.php'; ?>

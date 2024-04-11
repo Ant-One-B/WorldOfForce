@@ -42,6 +42,10 @@ body {
     }
 }
 
+// Formulaires
+@include form;
+
+@include btn;
 
 // Header
 
@@ -330,15 +334,15 @@ header {
 
     .prev,
     .next {
-        background-color: $cPrimaire;
+        background-color: $cBg;
         border: 1px solid $cPrimaire;
         cursor: pointer;
-        color: $cBg;
+        color: $cPrimaire;
         margin: 30px 20px;
         width: 40px;
         &:hover{
-            background-color: $cBg;
-            color: $cPrimaire;
+            background-color: $cPrimaire;
+            color: $cBg;
         }
     }
 }
@@ -535,7 +539,9 @@ footer {
 // Profil    
 .profil {
     margin: 10px 20px;
-
+    h2{
+        margin : 20px 0;
+    }
     p,
     a {
         margin-bottom: 20px;
@@ -559,12 +565,10 @@ footer {
 
 }
 
-.delete {
-    margin: 20px;
-    padding: 5px;
+.delete { 
+    border: 1px solid $cSith;
     background-color: $cSith;
-    font-family: 'star_jediregular';
-    font-size: 18px;
+    
 }
 
 // Message reçus
@@ -642,7 +646,6 @@ table {
 
 .comments {
 
-
     h2 {
         text-align: center;
     }
@@ -667,7 +670,12 @@ table {
     .com p:last-of-type {
         text-align: end;
     }
-    }
+}
+#connect{
+    text-align: center; 
+    padding: 20px;
+     
+}
     
 
 // mentions 
@@ -717,10 +725,17 @@ table {
     }
 }
 
-// Erreurs
+// Erreurs / Messages
 
 .errorMessages {
-    border: 1px solid $cSith;
+    border: 3px solid $cSith;
+    padding: 10px;
+    color: $cPrimaire;
+    text-align: center;
+    margin: 30px;
+}
+.showMessages {
+    border: 3px solid $cPrimaire;
     padding: 10px;
     color: $cPrimaire;
     text-align: center;
@@ -735,10 +750,7 @@ table {
     margin: 30px;
 }
 
-// Formulaires
-@include form;
 
-@include btn;
 
 #del {
     color: $cBg;
@@ -752,3 +764,4 @@ table {
         background-color: $cBg;
     }
 }
+

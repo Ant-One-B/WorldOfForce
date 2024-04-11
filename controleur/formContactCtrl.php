@@ -13,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception("Tous les champs du formulaire sont obligatoires.");
         }
         
+        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception("Adresse email invalide.");
+        }
         // Appeler la fonction du modèle pour enregistrer le message
         if (saveContactMessage($mail, $objet, $message)) {
             // Rediriger l'utilisateur vers une page de confirmation

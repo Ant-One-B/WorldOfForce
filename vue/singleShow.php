@@ -1,7 +1,9 @@
 <?php include __DIR__ . '/headerView.php'; ?>
 
 
-
+<?php if (!$show) :?>
+    <p class="nop"> Série non répertoriée</p>
+    <?php else : ?>
 <h1>
     <?= $show['titreS'] ?>
 </h1>
@@ -21,7 +23,8 @@
 $serieId = $_GET['id'];
 
 // Appeler la fonction pour récupérer les commentaires du film
-$comments = getShowComments($serieId); ?>
+$comments = getShowComments($serieId);
+    ?>
 <section class="comments">
     <h2>commentaires</h2>
     <div class="comContainer">
@@ -52,7 +55,7 @@ $comments = getShowComments($serieId); ?>
    <?php else: ?>
         <p class='noCom'>Aucun commentaire pour ce film.</p>
     <?php endif; ?>
-
+</section>
     <?php if (isset($_SESSION["pseudo"])): ?>
         <!-- Si la session est active avec un pseudo alors on affiche le formulaire de commentaire -->
         <form action="?route=serieUnique&id=<?= $_GET['id'] ?>&ref=<?= $_GET['ref'] ?>" method="post">
@@ -64,5 +67,11 @@ $comments = getShowComments($serieId); ?>
             <input type="submit" value="Ajouter un commentaire" class="btn">
         </form>
     <?php endif; ?>
-</section>
+
+<?php if (!isset($_SESSION["pseudo"])): ?>
+<div id="connect">
+   <a href="?route=connexion"class = "btn">connecter vous pour pouvoir commenter</a>
+</div>   
+<?php endif; ?>
+<?php endif; ?>
 <?php include __DIR__ . '/footerView.php'; ?>

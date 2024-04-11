@@ -7,6 +7,8 @@
     <p><span>Email :</span>
         <?= $util['mailU'] ?>
     </p>
+
+    <h2>pour mieux vous connaître</h2>
     <p><span>Région :</span>
         <?= $util['region'] ?>
     </p>
@@ -23,14 +25,14 @@
     <div class="modalContent">
         <p>Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.</p>
         <form id="deleteAccountForm" action="?route=profil" method="post">
-            <button type="submit" class="delete btn" name="supprimerCompte">oui, supprimer mon compte</button>
-            <button type="button" class="delete btn" id="cancelDelete">Annuler</button>
+            <button type="submit" class="btn delete" name="supprimerCompte">oui, supprimer mon compte</button>
+            <button type="button" class="btn" id="cancelDelete">Annuler</button>
         </form>
     </div>
 </div>
 
 <!-- Bouton pour ouvrir la boîte de dialogue modale -->
-<button id="openModal" class="delete btn">Supprimer mon compte</button>
+<button id="openModal" class="btn delete" >Supprimer mon compte</button>
 
 
 

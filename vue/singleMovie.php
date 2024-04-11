@@ -1,8 +1,9 @@
 <?php include __DIR__ . '/headerView.php'; ?>
 
 
-
-
+<?php if (!$movie) :?>
+    <p class="nop"> Film non répertorié</p>
+    <?php else : ?>
 <h1>
     <?= $movie['titreF'] ?>
 </h1>
@@ -25,7 +26,7 @@ $filmId = $_GET['id'];
 $comments = getMovieComments($filmId);
 
 // Vérifier si des commentaires ont été trouvés
-?>
+    ?>
 <section class="comments">
     <h2>commentaires</h2>
     <div class="comContainer">
@@ -60,7 +61,7 @@ $comments = getMovieComments($filmId);
 
 
 
-
+</section>
     <?php if (isset($_SESSION["pseudo"])): ?>
 
         <!-- Si la session est active avec un pseudo alors on affiche le formulaire de commentaire -->
@@ -72,5 +73,11 @@ $comments = getMovieComments($filmId);
             <input type="submit" value="Ajouter un commentaire" class="btn">
         </form>
     <?php endif; ?>
-</section>
+
+<?php if (!isset($_SESSION["pseudo"])): ?>
+<div id="connect">
+   <a href="?route=connexion"class = "btn">connecter vous pour pouvoir commenter</a>
+</div>   
+<?php endif; ?>
+<?php endif; ?>
 <?php include __DIR__ . '/footerView.php'; ?>

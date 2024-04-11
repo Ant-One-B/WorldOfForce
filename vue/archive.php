@@ -16,7 +16,9 @@ if ($messages && count($messages) > 0) {
         echo "</div>";
     }
 } else {
+    echo "<div class='archive'> ";
     echo "<p>Aucun message à afficher.</p>";
+    echo "</div>";
 }
 ?>
 

@@ -71,6 +71,7 @@ try {
         // Ajout de la série avec les données validées
         if (addShow($titre, $acteur, $tmdb, 'statics/images/upload/' . $fileName)) {
             header('Location: ?route=adminlivre');
+            addMessage('Série ajoutée !');
             exit;
         } else {
             throw new Exception("Erreur lors de l'ajout de la série.");

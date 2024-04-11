@@ -12,7 +12,7 @@ try {
     $users = getUsersWithRoles();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['userId'], $_POST['newRole'])) {
+        if (isset($_POST['userId'], $_POST['newRole']) && $_POST["userId"] !== "2") {
             // Mise à jour du rôle de l'utilisateur
             $userId = intval($_POST['userId']);
             $newRole = $_POST['newRole']; // Assurez-vous que le nouveau rôle est valide
@@ -25,7 +25,7 @@ try {
             } else {
                 throw new Exception("Une erreur s'est produite lors de la mise à jour du rôle de l'utilisateur.");
             }
-        } if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] != "Fenrae") {
+        } if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] !== "Fenrae") {
             // Suppression d'un compte utilisateur
             $deleteUserPseudo = $_POST['pseudoToDelete'];
             
