@@ -18,6 +18,7 @@ try {
         $commentId = intval($_POST['commentId']);
         // Appeler la fonction pour supprimer le commentaire
         if (deleteShowComment($commentId)) {
+            addMessage('Commentaire supprimé !');
             // Suppression réussie, aucune action supplémentaire nécessaire
         } else {
             throw new Exception("Une erreur s'est produite lors de la suppression du commentaire.");
@@ -32,6 +33,8 @@ try {
             // Ajoutez un commentaire et vérifiez si l'opération a réussi
             if(!addShowComment($serieId, $userId, $message)) {
                 throw new Exception("Une erreur s'est produite lors de l'ajout du commentaire.");
+            }else {
+                addMessage('Commentaire posté !');
             }
         } else {
             throw new Exception("Veuillez entrer un message.");

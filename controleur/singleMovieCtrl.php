@@ -18,6 +18,7 @@ try {
         $commentId = intval($_POST['commentId']);
         // Appeler la fonction pour supprimer le commentaire
         if (deleteMovieComment($commentId)) {
+            addMessage('Commentaire supprimé !');
             // Suppression réussie, aucune action supplémentaire nécessaire
         } else {
             throw new Exception("Une erreur s'est produite lors de la suppression du commentaire.");
@@ -32,6 +33,8 @@ try {
             // Ajouter un commentaire et vérifier si l'opération a réussi
             if (!addMovieComment($filmId, $userId, $message)) {
                 throw new Exception("Une erreur s'est produite lors de l'ajout du commentaire.");
+            }else {
+                addMessage('Commentaire posté !');
             }
         } else {
             throw new Exception("Veuillez entrer un message.");

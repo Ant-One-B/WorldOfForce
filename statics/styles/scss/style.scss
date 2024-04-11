@@ -47,6 +47,8 @@ body {
 
 @include btn;
 
+
+
 // Header
 
 header {
@@ -532,6 +534,7 @@ footer {
 
 // archive
 
+
 .archive {
     @include message;
 }
@@ -604,6 +607,7 @@ table {
     }
 
 }
+
 
 
 // single page film/série/livre unique

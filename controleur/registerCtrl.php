@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Créer un nouvel utilisateur grâce à la fonction
         if (createUser($pseudo, $mail, $password)) {
             header('Location: ?route=connexion');
+            addMessage('Vous pouvez maintenant vous connecter.');
             exit;
         } else {
             throw new Exception("Une erreur est survenue lors de l'inscription. Veuillez réessayer.");

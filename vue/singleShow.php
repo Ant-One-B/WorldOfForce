@@ -37,7 +37,7 @@ $comments = getShowComments($serieId);
                     <?= $comment['pseudoU'] ?> à écrit :
                 </p>
                 <p class='comC'>
-                    <?= $comment['messageC'] ?>
+                    <?= nl2br($comment['messageC']) ?>
                 </p>
                 <p class='dateC'>Le :
                     <?= $formatted_date ?>

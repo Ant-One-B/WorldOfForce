@@ -21,21 +21,21 @@
                             <?= $message['objetF'] ?>
                         </td>
                         <td class="text">
-                            <?= $message['messageF'] ?>
+                            <?= nl2br($message['messageF']) ?>
                         </td>
                         <td>
                             <?= $formatted_date ?>
                         </td>
 
                         <td>
-                            <?php if ($message['statutF'] === 'wait'): ?>
+                            
                                 <form action="?route=contactadmin" method="post">
                                     <!-- récupération de l'id du message à traiter -->
                                     <input type="hidden" name="messageId" value="<?= $message['id_contact'] ?>">
                                     <!-- traitement du message -->
                                     <input type="submit" name="updateStatus" class="btn" value="Marquer comme fait">
                                 </form>
-                            <?php endif; ?>
+                            
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -43,7 +43,7 @@
         </table>
     </div>
 <?php else: ?>
-    <p class="noCom">Aucun message de contact trouvé.</p>
+    <p class="nop">Aucun message de contact trouvé.</p>
 <?php endif; ?>
 
 <?php include __DIR__ . '/footerView.php'; ?>

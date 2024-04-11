@@ -26,7 +26,7 @@
         <?= $formatted_date ?>
     </p>
     <p>Synopsis :
-        <?= $book['synopsisL'] ?>
+        <?= nl2br($book['synopsisL']) ?>
     </p>
 </section>
 
@@ -44,7 +44,7 @@ $comments = getBookComments($livreId); ?>
                 <?php $formatted_date = date('d/m/Y', strtotime($comment['dateC'])); ?>
                 <div class="com">
                     <p class='pseudoC'><?= $comment['pseudoU'] ?> à écrit :</p>
-                    <p class='comC'><?= $comment['messageC'] ?></p>
+                    <p class='comC'><?= nl2br($comment['messageC']) ?></p>
                     <p class='dateC'>le: <?= $formatted_date ?></p>
                     <?php if ((isset($_SESSION["role"]) && $_SESSION["role"] === "Admin" || (isset($_SESSION["pseudo"]) && $_SESSION["pseudo"] === $comment['pseudoU']))): ?>
                         <!-- Bouton de suppression -->

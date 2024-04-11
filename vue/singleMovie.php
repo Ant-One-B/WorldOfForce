@@ -38,7 +38,7 @@ $comments = getMovieComments($filmId);
                         <?= $comment['pseudoU'] ?> à écrit :
                     </p>
                     <p class='comC'>
-                        <?= $comment['messageC'] ?>
+                        <?= nl2br($comment['messageC']) ?>
                     </p>
                     <p class='dateC'>le :
                         <?= $formatted_date ?>
