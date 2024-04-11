@@ -12,20 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($mail) || empty($objet) || empty($message)) {
             throw new Exception("Tous les champs du formulaire sont obligatoires.");
         }
-
-        // Vérifier si les caractères interdits sont présents dans le mail, l'objet et le message
-        if (preg_match("/[<>\{\}\[\]\/\\\\]/", $mail)) {
-            throw new Exception("L'adresse e-mail ne peut pas contenir les caractères : <>{[]}\/");
-        }
-
-        if (preg_match("/[<>\{\}\[\]\/\\\\]/", $objet)) {
-            throw new Exception("L'objet ne peut pas contenir les caractères : <>{[]}\/");
-        }
-
-        if (preg_match("/[<>\{\}\[\]\/\\\\]/", $message)) {
-            throw new Exception("Le message ne peut pas contenir les caractères : <>{[]}\/");
-        }
-
+        
         // Appeler la fonction du modèle pour enregistrer le message
         if (saveContactMessage($mail, $objet, $message)) {
             // Rediriger l'utilisateur vers une page de confirmation

@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 
 
@@ -46,4 +46,4 @@
     <p class="noCom">Aucun message de contact trouvé.</p>
 <?php endif; ?>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

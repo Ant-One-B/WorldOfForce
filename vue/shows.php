@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 <h1>Les séries</h1>
 
@@ -21,4 +21,4 @@ if (!$shows) {
     </div>
 </div>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

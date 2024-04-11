@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 
 <h1>Connexion</h1>
@@ -11,4 +11,4 @@
     <input type="submit" value="Se connecter" class="btn">
 </form>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

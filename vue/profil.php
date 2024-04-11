@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 <h1>Profil de
     <?= $util['pseudoU'] ?>
@@ -21,7 +21,6 @@
 <!-- Boîte de dialogue modale -->
 <div id="confirmationModal" class="modal">
     <div class="modalContent">
-        <!-- <span class="close" id="closeModal">&times;</span> -->
         <p>Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.</p>
         <form id="deleteAccountForm" action="?route=profil" method="post">
             <button type="submit" class="delete btn" name="supprimerCompte">oui, supprimer mon compte</button>
@@ -35,4 +34,4 @@
 
 
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

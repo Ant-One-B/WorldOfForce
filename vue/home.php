@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 
 
@@ -61,15 +61,15 @@
         <div class="carousel">
 
             <div class="carouselInner">
-                <img src="statics/images/upload/episodeI.jpg" alt="Star wars la menace fantome">
-                <img src="statics/images/upload/episodeII.jpg" alt="Star wars l'attaque des clones">
-                <img src="statics/images/upload/episodeIII.jpg" alt="star wars la revanche des siths">
-                <img src="statics/images/upload/episodeIV.jpg" alt="Star wars un nouvel espoir">
-                <img src="statics/images/upload/episodeV.jpg" alt="Star wars l'empire contre-attaque">
-                <img src="statics/images/upload/episodeVI.jpg" alt="Star wars le retour du jedi">
-                <img src="statics/images/upload/episodeVII.jpg" alt="Star wars le reveil de la force">
-                <img src="statics/images/upload/episodeVIII.jpg" alt="Star wars les dernier jedi">
-                <img src="statics/images/upload/episodeIX.jpg" alt="Star wars l'ascension de Skywalker">
+                <a href="?route=filmUnique&id=7&ref=1893"><img src="statics/images/upload/episodeI.jpg" alt="Star wars la menace fantome"></a>
+                <a href="?route=filmUnique&id=8&ref=1894"><img src="statics/images/upload/episodeII.jpg" alt="Star wars l'attaque des clones"></a>
+                <a href="?route=filmUnique&id=9&ref=1895"><img src="statics/images/upload/episodeIII.jpg" alt="star wars la revanche des siths"></a>
+                <a href="?route=filmUnique&id=4&ref=11"><img src="statics/images/upload/episodeIV.jpg" alt="Star wars un nouvel espoir"></a>
+                <a href="?route=filmUnique&id=5&ref=1891"><img src="statics/images/upload/episodeV.jpg" alt="Star wars l'empire contre-attaque"></a>
+                <a href="?route=filmUnique&id=6&ref=1892"><img src="statics/images/upload/episodeVI.jpg" alt="Star wars le retour du jedi"></a>
+                <a href="?route=filmUnique&id=10&ref=140607"><img src="statics/images/upload/episodeVII.jpg" alt="Star wars le reveil de la force"></a>
+                <a href="?route=filmUnique&id=11&ref=181808"><img src="statics/images/upload/episodeVIII.jpg" alt="Star wars les dernier jedi"></a>
+                <a href="?route=filmUnique&id=12&ref=181812"><img src="statics/images/upload/episodeIX.jpg" alt="Star wars l'ascension de Skywalker"></a>
             </div>
             <div class="controls">
                 <button class="prev btn">précédent</button>
@@ -94,4 +94,4 @@
     </a>
 
 </div>
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

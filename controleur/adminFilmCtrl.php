@@ -31,7 +31,7 @@ try {
 
 
         // Types de fichiers autorisés
-        $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+        $allowedFileTypes = ['jpg', 'jpeg', 'png', 'webp'];
 
         // Vérifier si le fichier a été téléchargé avec succès
         if ($_FILES['affiche']['error'] !== UPLOAD_ERR_OK) {
@@ -64,12 +64,6 @@ try {
         $tmdb = htmlspecialchars($_POST['tmdb'] ?? '');
 
         // Vérification des saisies du formulaire
-        if (preg_match("/[<>{}[\]\/\\\\]/", $titre)) {
-            throw new Exception("Titre invalide. Le titre ne doit pas contenir les caractères suivants : < > { } [ ] / \\");
-        }
-        if (preg_match("/^[^0-9><{\[\]}\//]+$/", $acteur)) {
-            throw new Exception("Acteur invalide. L'acteur ne doit pas contenir de chiffres ou les caractères spéciaux suivants : ><{[\]}/.");
-        }
         if (!preg_match("/^[0-9 ]{2,50}$/", $tmdb)) {
             throw new Exception("Référence tmdb invalide. La référence doit être un nombre");
         }

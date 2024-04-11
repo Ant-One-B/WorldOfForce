@@ -20,4 +20,4 @@ if ($messages && count($messages) > 0) {
 }
 ?>
 
-<?php require_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

@@ -191,7 +191,7 @@ header {
         .titleContent {
             position: absolute;
             top: 100%;
-            animation: scroll 120s linear 4s forwards;
+            animation: scroll 120s linear 4s forwards ;
 
             .contentHeader {
                 text-align: center;
@@ -333,11 +333,11 @@ header {
         background-color: $cPrimaire;
         border: 1px solid $cPrimaire;
         cursor: pointer;
-        color: $cJedi;
+        color: $cBg;
         margin: 30px 20px;
         width: 40px;
         &:hover{
-            background-color: $cJedi;
+            background-color: $cBg;
             color: $cPrimaire;
         }
     }
@@ -646,13 +646,18 @@ table {
     h2 {
         text-align: center;
     }
-
+.comContainer{
+    margin: 20px auto;
+    max-width: 1250px;
+    min-width: 250px;
+    overflow: scroll;
+    height: 350px;
+}
     .com,
     .noCom {
         border: 1px solid $cPrimaire;
         margin: 30px 40px;
         padding: 10px;
-
     }
 
     .com p {
@@ -662,9 +667,8 @@ table {
     .com p:last-of-type {
         text-align: end;
     }
-
-}
-
+    }
+    
 
 // mentions 
 

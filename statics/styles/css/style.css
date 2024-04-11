@@ -277,7 +277,8 @@ header .menus #menuToggleCheckbox:checked ~ .menuS {
   height: auto;
   margin: 0 15px;
   transition: all 0.3s ease;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .carouselContainer .carousel .carouselInner img.active {
   transform: scale(1.1);
@@ -299,13 +300,13 @@ header .menus #menuToggleCheckbox:checked ~ .menuS {
   background-color: #FFC000;
   border: 1px solid #FFC000;
   cursor: pointer;
-  color: #5E65FF;
+  color: #1F1F1F;
   margin: 30px 20px;
   width: 40px;
 }
 .carouselContainer .prev:hover,
 .carouselContainer .next:hover {
-  background-color: #5E65FF;
+  background-color: #1F1F1F;
   color: #FFC000;
 }
 
@@ -421,7 +422,8 @@ footer p {
   /* Largeur de la couverture */
   height: auto;
   /* Hauteur de la couverture */
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   /* Ajustement de la taille de l'image pour remplir complètement le conteneur */
   transition: 0.3s ease;
   /* Transition fluide pour l'effet de survol */
@@ -520,6 +522,7 @@ table tbody tr td .text {
 }
 table tbody tr td input,
 table tbody tr td button {
+  min-width: -moz-fit-content;
   min-width: fit-content;
   max-width: 150px;
 }
@@ -559,6 +562,13 @@ table tbody tr td form {
 }
 .comments h2 {
   text-align: center;
+}
+.comments .comContainer {
+  margin: 20px auto;
+  max-width: 1250px;
+  min-width: 250px;
+  overflow: scroll;
+  height: 350px;
 }
 .comments .com,
 .comments .noCom {
@@ -682,6 +692,7 @@ fieldset {
 #del {
   color: #1F1F1F;
   background-color: #FF0000;
+  min-width: -moz-fit-content;
   min-width: fit-content;
   max-width: 150px;
   border: 1px solid #FF0000;

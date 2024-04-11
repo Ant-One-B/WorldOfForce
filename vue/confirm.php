@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 <h1>message envoyé avec succés</h1>
 
 <div class="container">
@@ -8,4 +8,4 @@
     </div>
 </div>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

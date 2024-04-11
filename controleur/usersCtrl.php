@@ -25,7 +25,7 @@ try {
             } else {
                 throw new Exception("Une erreur s'est produite lors de la mise à jour du rôle de l'utilisateur.");
             }
-        } if (isset($_POST['pseudoToDelete'])) {
+        } if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] != "Fenrae") {
             // Suppression d'un compte utilisateur
             $deleteUserPseudo = $_POST['pseudoToDelete'];
             

@@ -27,12 +27,7 @@ try {
             $serieId = intval($_POST['serieId']); 
             $userId = intval($_POST['userId']); 
             // Utiliser htmlspecialchars pour sécuriser le message 
-            $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
-
-            // Vérifier si le message contient des caractères interdits
-            if (preg_match("/[<>\{\}\[\]\/\\\\]/", $message)) {
-                throw new Exception("Le message ne peut pas contenir les caractères : <>{[]}\/");
-            }
+            $message = htmlspecialchars($_POST['message']);
 
             // Ajoutez un commentaire et vérifiez si l'opération a réussi
             if(!addShowComment($serieId, $userId, $message)) {

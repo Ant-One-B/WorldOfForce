@@ -11,7 +11,7 @@ function getAllContactMessagesWait()
     }
 
     try {
-        $query = "SELECT * FROM contact WHERE statutF = 'wait' ";
+        $query = "SELECT * FROM contact WHERE statutF = 'wait'";
         $statement = $conn->prepare($query);
         $statement->execute();
         $messages = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -33,7 +33,7 @@ function getAllContactMessages()
     }
 
     try {
-        $query = "SELECT * FROM contact";
+        $query = "SELECT * FROM contact ORDER BY dateF DESC";
         $statement = $conn->prepare($query);
         $statement->execute();
         $messages = $statement->fetchAll(PDO::FETCH_ASSOC);

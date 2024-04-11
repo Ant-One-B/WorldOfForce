@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 
 <h1>mentions légales</h1>
@@ -51,4 +51,4 @@
         est indépendant de Lucasfilm Ltd. et n'est en aucun cas affilié à l'entreprise.</p>
 </article>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

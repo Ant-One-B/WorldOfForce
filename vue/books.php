@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 <h1>Les livres</h1>
 
@@ -13,7 +13,7 @@ if (!$livres) {
         if ($livres) {
             // Utilisation d'un foreach pour afficher toutes les couvertures de livres
             foreach ($livres as $livre) {
-                // écriture de l'url pour avoir accés a l'id et la ref du livre sur la page suivante.
+                // écriture de l'url pour avoir accés a l'id du livre sur la page suivante.
                 echo "<a href='?route=livreUnique&id=" . $livre['id_livre'] . "'><img src='" . $livre['couvertureL'] . "' alt='" . $livre['titreL'] . "' class='poster'></a>";
             }
         } 
@@ -21,4 +21,4 @@ if (!$livres) {
     </div>
 </div>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

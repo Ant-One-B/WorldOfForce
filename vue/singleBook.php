@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 <h1>
     <?= $book['titreL'] ?>
@@ -31,18 +31,19 @@
     <?php
     // Récupérer l'identifiant du film à partir de la requête GET
     $livreId = $_GET['id'];
-
+    
     // Appeler la fonction pour récupérer les commentaires du film
     $comments = getBookComments($livreId);?>
 <section class="comments">
     <h2>commentaires</h2>
-
+    <div class="comContainer">
     <?php if ($comments) : ?>
     <?php foreach ($comments as $comment): ?>
+        <?php $formatted_date = date('d/m/Y', strtotime($comment['dateC'])); ?>
     <div class="com">
-        <p class='pseudoC'>Par : <?= $comment['pseudoU'] ?></p>
+        <p class='pseudoC'><?= $comment['pseudoU'] ?> à écrit :</p>
         <p class= 'comC'><?= $comment['messageC'] ?></p>
-        <p class= 'dateC'>Date : <?= $comment['dateC'] ?></p>
+        <p class= 'dateC'>le: <?= $formatted_date ?></p>
         <?php if ((isset($_SESSION["role"]) && $_SESSION["role"] === "Admin" || (isset($_SESSION["pseudo"]) && $_SESSION["pseudo"] === $comment['pseudoU']))): ?>
         <!-- Bouton de suppression -->
         <form action="?route=livreUnique&id=<?= $_GET['id'] ?>" method="post">
@@ -51,8 +52,9 @@
         </form>
         <?php endif; ?>
     </div>
-<?php endforeach; 
- else :?>
+<?php endforeach; ?>
+    </div>
+<?php else :?>
  <p class='noCom'>Aucun commentaire pour ce film.</p>
  <?php endif; ?>
 
@@ -67,4 +69,4 @@
     </form>
     <?php endif; ?>
 </section>
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

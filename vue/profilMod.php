@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 
 <form action="?route=modifierprofil" method="post">
@@ -9,4 +9,4 @@
     <button type="submit" class="btn">Mettre à jour</button>
 </form>
 
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>

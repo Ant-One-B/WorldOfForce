@@ -30,7 +30,7 @@ try {
         $maxFileSize = 150 * 1024; // 150 Ko
 
         // Types de fichiers autorisés
-        $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+        $allowedFileTypes = ['jpg', 'jpeg', 'png', 'webp'];
 
         // Vérifier si le fichier a été téléchargé avec succès
         if ($_FILES['couverture']['error'] !== UPLOAD_ERR_OK) {
@@ -66,22 +66,10 @@ try {
         $synopsis = htmlspecialchars($_POST['synopsis'] ?? '');
 
         // Vérification des saisies du formulaire
-        if (preg_match("/[<>{}[\]\/\\\\]/", $titre)) {
-            throw new Exception("Titre invalide. Le titre ne doit pas contenir les caractères suivants : < > { } [ ] / \\");
-        }
-        if (preg_match("/[<>{[\]}/\\\\]/", $auteur)) {
-            throw new Exception("Erreur : auteur invalide. L'acteur ne doit pas contenir les caractères suivants : < > { } [ ] / \\");
-        }
+        
         if (!preg_match("/^[0-9 ]{2,50}$/", $pages)) {
-            throw new Exception("Nombres de pages invalide.");
+            throw new Exception("Nombres de pages invalide. Entrez un nombre");
         }
-        if (preg_match("/[<>{[\]}/\\\\]/", $edition)) {
-            throw new Exception("Erreur : éditeur invalide. L'éditeur ne doit pas contenir les caractères suivants : < > { } [ ] / \\");
-        }
-        if (!preg_match("/^[a-zA-Z0-9\s',;.?!():\-–_°#]{10,25000}$/u", $synopsis)) {
-            throw new Exception("Erreur : synopsis invalide. Le synopsis ne doit contenir que des lettres, des chiffres, des espaces et les ponctuations suivantes : ', ; . ? ! ( ) - – _ ° #, et avoir une longueur entre 10 et 25000 caractères.");
-        }
-
         // Ajout du livre avec les données validées
         addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, 'statics/images/upload/' . $fileName);
     }

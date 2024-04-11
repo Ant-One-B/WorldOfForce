@@ -8,7 +8,6 @@ if (isset($_GET["route"])) {
     switch ($route) {
         case 'accueil':
             $route = include __DIR__ . '/homeCtrl.php';
-            $title = "Acceuil";
             break;
         case 'inscription':
             $route = include __DIR__ . '/registerCtrl.php';

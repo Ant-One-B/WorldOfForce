@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/headerView.php'; ?>
+<?php include __DIR__ . '/headerView.php'; ?>
 
 <h1>Liste des Utilisateurs</h1>
 <div class="tableContainer">
@@ -39,4 +39,4 @@
         </tbody>
     </table>
 </div>
-<?php include_once __DIR__ . '/footerView.php'; ?>
+<?php include __DIR__ . '/footerView.php'; ?>
