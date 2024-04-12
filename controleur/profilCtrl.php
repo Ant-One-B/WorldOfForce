@@ -20,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimerCompte'])) {
         header('Location: ?route=accueil');
         exit;
     } else {
-        // Rediriger l'utilisateur vers la page de profil
-        header('Location: ?route=profil');
         // En cas d'erreur lors de la suppression du compte, afficher un message d'erreur
         addError("Une erreur s'est produite lors de la suppression du compte. Veuillez réessayer.");
+        // Rediriger l'utilisateur vers la page de profil
+        header('Location: ?route=profil');
         exit;
     }
 }
