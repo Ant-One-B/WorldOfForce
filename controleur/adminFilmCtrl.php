@@ -69,7 +69,13 @@ try {
         }
 
         // Ajout du film avec les données validées
-        addMovie($titre, $acteur, $tmdb, 'statics/images/upload/' . $fileName);
+        if (addMovie($titre, $acteur, $tmdb, 'statics/images/upload/' . $fileName)) {
+            header('Location: ?route=adminfilm');
+            addMessage('Film ajouté !');
+            exit;
+        } else {
+            throw new Exception("Erreur lors de l'ajout du film.");
+        }
     }
 } catch (Exception $e) {
     // Capturer l'exception et afficher le message d'erreur

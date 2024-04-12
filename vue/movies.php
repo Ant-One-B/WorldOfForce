@@ -2,15 +2,16 @@
 
 <h1>Les films</h1>
 
-<?php 
+<?php
 if (!$films) {
     echo "<p class='nop'>Aucun film trouvé.</p>";
 }
 ?>
 
+
 <div class="gridContainer">
     <div class="grid">
-        <?php 
+        <?php
         if ($films) {
             // utilisation de foreach pour afficher les affiches des films présent dans la base de donnée
             foreach ($films as $film) {

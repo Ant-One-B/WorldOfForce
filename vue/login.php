@@ -11,4 +11,8 @@
     <input type="submit" value="Se connecter" class="btn">
 </form>
 
+<div id="connect">
+    <a href="?route=inscription" class="btn"> pas encore de compte ?</a>
+</div>
+
 <?php include __DIR__ . '/footerView.php'; ?>

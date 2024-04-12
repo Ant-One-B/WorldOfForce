@@ -64,7 +64,7 @@ function getMovieDetails($refTmdb)
         return $movie;
     } catch (PDOException $e) {
         // Gestion des erreurs
-        addError("Erreur de base de données : " . $e->getMessage());
+        addError("Erreur de base de données : référence introuvable ");
         return false;
     }
 }

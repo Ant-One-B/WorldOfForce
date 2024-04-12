@@ -71,7 +71,14 @@ try {
             throw new Exception("Nombres de pages invalide. Entrez un nombre");
         }
         // Ajout du livre avec les données validées
-        addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, 'statics/images/upload/' . $fileName);
+        
+        if (addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, 'statics/images/upload/' . $fileName)) {
+            header('Location: ?route=adminlivre');
+            addMessage('livre ajouté !');
+            exit;
+        } else {
+            throw new Exception("Erreur lors de l'ajout du livre.");
+        }
     }
 } catch (Exception $e) {
     // Capturer l'exception et afficher le message d'erreur

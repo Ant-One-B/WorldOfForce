@@ -12,7 +12,7 @@ try {
     $users = getUsersWithRoles();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['userId'], $_POST['newRole'])) {
+        if (isset($_POST['userId'], $_POST['newRole']) && $_POST["userId"] !== "2") {
             // Mise à jour du rôle de l'utilisateur
             $userId = intval($_POST['userId']);
             $newRole = $_POST['newRole']; // Assurez-vous que le nouveau rôle est valide
@@ -21,11 +21,12 @@ try {
             if (updateUserRole($userId, $newRole)) {
                 // Mise à jour réussie
                 header("Location: ?route=users"); // Redirection vers la liste des utilisateurs après la mise à jour
+                addMessage('Mise à jour du rôle effectuée.');
                 exit();
             } else {
                 throw new Exception("Une erreur s'est produite lors de la mise à jour du rôle de l'utilisateur.");
             }
-        } if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] != "Fenrae") {
+        } if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] !== "Fenrae") {
             // Suppression d'un compte utilisateur
             $deleteUserPseudo = $_POST['pseudoToDelete'];
             
@@ -33,6 +34,7 @@ try {
             if (deleteUser($deleteUserPseudo)) {
                 // Suppression réussie
                 header("Location: ?route=users"); // Redirection vers la liste des utilisateurs après la suppression
+                addMessage(''. $deleteUserPseudo .' à bien été supprimé.');
                 exit();
             } else {
                 throw new Exception("Une erreur s'est produite lors de la suppression du compte utilisateur.");

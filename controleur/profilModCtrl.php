@@ -11,15 +11,20 @@ $util = getUserByPseudo($pseudo);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Vérifier si les champs région et description sont définis dans la requête
-        if (isset($_POST['region'], $_POST['description'])) {
+        if (isset($_POST['region'], $_POST['description'], $_POST['mail'])) {
             // Récupérer les données saisies par l'utilisateur
             $region = htmlspecialchars($_POST['region'], ENT_QUOTES, 'UTF-8');
             $description = htmlspecialchars($_POST['description'], ENT_QUOTES, 'UTF-8');
+            $mail= htmlspecialchars($_POST['mail'], ENT_QUOTES, 'UTF-8');
 
                
             // Mettre à jour la région et la description de l'utilisateur dans la base de données
             $pseudo = $_SESSION['pseudo'];
             $success = updateUserInfo($pseudo, $region, $description);
+
+            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                throw new Exception("Adresse email invalide.");
+            }
 
             // Rediriger l'utilisateur en fonction du résultat de la mise à jour
             if ($success) {
