@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World of force</title>
     <!-- lien vers la feuille de style -->
-    <link rel="stylesheet" href="statics/styles/css/style.css">
+    <link rel="stylesheet" href="statics/styles/css/style.min.css">
     <!-- liens vers les scripts -->
     <?php if (!isset($_GET['route']) || $_GET['route'] == 'accueil'):?>
     <script src="statics/scripts/script.js" defer></script>
