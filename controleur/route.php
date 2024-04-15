@@ -19,13 +19,13 @@ if (isset($_GET["route"])) {
             $action = include __DIR__ . '/logoutCtrl.php';
             break;
         case 'adminlivre':
-            $route = include __DIR__ . '/adminLivreCtrl.php';
+            $route = include __DIR__ . '/adminBooksCtrl.php';
             break;
         case 'adminfilm':
-            $route = include __DIR__ . '/adminFilmCtrl.php';
+            $route = include __DIR__ . '/adminMoviesCtrl.php';
             break;
         case 'adminserie':
-            $route = include __DIR__ . '/adminSerieCtrl.php';
+            $route = include __DIR__ . '/adminShowsCtrl.php';
             break;
         case 'livres':
             $route = include __DIR__ . '/booksCtrl.php';
