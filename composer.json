@@ -1,0 +1,12 @@
+{
+    "name": "kercode23/world-of-force",
+    "authors": [
+        {
+            "name": "Antoine Boeraeve",
+            "email": "antoine.boeraeve@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
