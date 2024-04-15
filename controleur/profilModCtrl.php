@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/../modele/dbUser.php";
+include __DIR__ . "/../modele/user.php";
 
 // on défini la variable $pseudo grâce à la session
 $pseudo = $_SESSION['pseudo'];

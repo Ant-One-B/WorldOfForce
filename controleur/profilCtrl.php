@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/../modele/dbUser.php';
+<?php include __DIR__ . '/../modele/user.php';
 
 
 // on défini la variable $pseudo grace à la session
