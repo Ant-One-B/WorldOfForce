@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 07 avr. 2024 à 12:43
+-- Généré le : lun. 15 avr. 2024 à 08:28
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -40,20 +40,12 @@ CREATE TABLE `commentaire` (
 
 INSERT INTO `commentaire` (`id_commentaire`, `messageC`, `dateC`, `id_utilisateur`) VALUES
 (1, 'ejzgbzgbzigvuizevg', '2024-03-30', 2),
-(2, 'test1234', '2024-03-30', 2),
-(3, 'rehrehtjztrzj', '2024-03-30', 2),
 (4, 'test', '2024-03-31', 2),
-(5, 'test', '2024-03-31', 2),
-(6, 'test', '2024-03-31', 2),
-(7, 'gerhre', '2024-03-31', 2),
-(11, 'bhezufvezgvoze', '2024-04-06', 2),
 (16, 'jezgbezpgba', '2024-04-06', 2),
 (17, 'regrehtzhtz', '2024-04-06', 2),
-(18, 'eztgezgrega', '2024-04-06', 2),
 (19, 'areetrgra', '2024-04-06', 2),
 (21, 'sqafzafaegagagea', '2024-04-06', 2),
-(22, 'ezreztezt', '2024-04-06', 2),
-(24, 'jbeuipgzbzirhbirzb', '2024-04-06', 2);
+(22, 'ezreztezt', '2024-04-06', 2);
 
 -- --------------------------------------------------------
 
@@ -66,16 +58,6 @@ CREATE TABLE `commentaire_film` (
   `id_film` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `commentaire_film`
---
-
-INSERT INTO `commentaire_film` (`id_commentaire`, `id_film`) VALUES
-(2, 4),
-(3, 4),
-(18, 5),
-(11, 7);
-
 -- --------------------------------------------------------
 
 --
@@ -87,15 +69,6 @@ CREATE TABLE `commentaire_livre` (
   `id_livre` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `commentaire_livre`
---
-
-INSERT INTO `commentaire_livre` (`id_commentaire`, `id_livre`) VALUES
-(6, 4),
-(7, 4),
-(5, 5);
-
 -- --------------------------------------------------------
 
 --
@@ -106,13 +79,6 @@ CREATE TABLE `commentaire_serie` (
   `id_commentaire` int(11) NOT NULL,
   `id_serie` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `commentaire_serie`
---
-
-INSERT INTO `commentaire_serie` (`id_commentaire`, `id_serie`) VALUES
-(24, 1);
 
 -- --------------------------------------------------------
 
@@ -260,7 +226,9 @@ CREATE TABLE `utilisateur` (
 INSERT INTO `utilisateur` (`id_utilisateur`, `pseudoU`, `mailU`, `mdpU`, `region`, `description`, `role`) VALUES
 (1, 'marion', 'divers.autres@outlook.fr', '$2y$10$viDfxx.q5o2cfMI/LF35wuLDxgtcifrcSJguAQjozYDKFa3l4dc5.', NULL, NULL, 'Membre'),
 (2, 'Fenrae', 'antoine.boeraeve@gmail.com', '$2y$10$jZUmGILlLcdmW.WMNjfFxe063MVElBJTvQmFcyR5uKYMMW9ZDtfnC', 'Morbihan', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem.', 'Admin'),
-(6, 'Thierry', 'thierry.bouedo@ac-rennes.fr', '$2y$10$dw2niRG3LAg4/1RrX1DRiuv/hWJwh4zMbxJ3iw891aesodzs/SIsy', 'bretagne', 'formateur kercode', 'Admin');
+(6, 'Thierry', 'thierry.bouedo@ac-rennes.fr', '$2y$10$dw2niRG3LAg4/1RrX1DRiuv/hWJwh4zMbxJ3iw891aesodzs/SIsy', 'bretagne', 'formateur kercode', 'Admin'),
+(9, 'Test', 'test@kercode.com', '$2y$10$Q0TMesLLsS.NF4kQ5omoR.s6VltRyHTWrZZOLAIlzfaLKToVjHEo6', NULL, NULL, 'Membre'),
+(10, 'Admin', 'admin@kercode.com', '$2y$10$UeEXbGWs/A6wAunpNtfWzeDPE57GgGQwyF2Uphrq54Jx0veoRlWJy', NULL, NULL, 'Admin');
 
 --
 -- Index pour les tables déchargées
@@ -366,7 +334,7 @@ ALTER TABLE `serie`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées

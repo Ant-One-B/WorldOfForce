@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../modele/movie.php';
-
+// page inexistante pour les non administrateur
 if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
     include __DIR__ . "/../vue/404.php";
     exit;
@@ -59,9 +59,9 @@ try {
         }
 
         // Récupération des données soumises via le formulaire
-        $titre = htmlspecialchars($_POST['titre'] ?? '');
-        $acteur = htmlspecialchars($_POST['acteur'] ?? '');
-        $tmdb = htmlspecialchars($_POST['tmdb'] ?? '');
+        $titre = htmlspecialchars($_POST['titre'] ?? '', ENT_QUOTES, 'UTF-8');
+        $acteur = htmlspecialchars($_POST['acteur'] ?? '', ENT_QUOTES, 'UTF-8');
+        $tmdb = htmlspecialchars($_POST['tmdb'] ?? '', ENT_QUOTES, 'UTF-8');
 
         // Vérification des saisies du formulaire
         if (!preg_match("/^[0-9 ]{2,50}$/", $tmdb)) {

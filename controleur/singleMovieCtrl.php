@@ -28,7 +28,7 @@ try {
             $filmId = intval($_POST['filmId']); 
             $userId = intval($_POST['userId']);
             // Utiliser htmlspecialchars pour sécuriser le message 
-            $message = htmlspecialchars($_POST['message']);
+            $message = htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8');
 
             // Ajouter un commentaire et vérifier si l'opération a réussi
             if (!addMovieComment($filmId, $userId, $message)) {

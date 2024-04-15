@@ -1,6 +1,6 @@
 <?php
 
-// création des routes pour afficher els différentes pages du site.
+// création des routes pour afficher les différentes pages du site.
 
 if (isset($_GET["route"])) {
     $route = $_GET['route'] ?? '';

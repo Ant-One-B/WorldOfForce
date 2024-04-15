@@ -19,3 +19,13 @@ Avant de lancer l'application, veuillez configurer les paramètres de connexion 
 ## Utilisation
 
 Une fois que vous avez cloné le répertoire, renommé le fichier `.env.exemple`, créé la base de données ,configuré les paramètres de connexion et installé Composer vous êtes prêt à utiliser l'application.
+
+## Utilisateurs Test et Admin
+
+Deux utilisateurs ont été créés :
+1. Pseudo ------- Mail ----- Mot de passe
+2. Test - test@kercode.com - Test@kercode1
+3. Admin - admin@kercode.com - Admin@kercode1
+
+## Lien du site
+[World of force](http://greta-bretagne-sud.fr/stagiaires-kercode/antoine-boeraeve/World-of-force/)

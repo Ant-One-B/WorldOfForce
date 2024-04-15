@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../modele/book.php';
-
+// page inexistante pour les non administrateur
 if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
     include __DIR__ . "/../vue/404.php";
     exit;
@@ -58,12 +58,12 @@ try {
         }
 
         // Récupération des données soumises via le formulaire
-        $titre = htmlspecialchars($_POST['titre'] ?? '');
-        $auteur = htmlspecialchars($_POST['auteur'] ?? '');
-        $pages = htmlspecialchars($_POST['pages'] ?? '');
-        $sortie = htmlspecialchars($_POST['sortie'] ?? '');
-        $edition = htmlspecialchars($_POST['edition'] ?? '');
-        $synopsis = htmlspecialchars($_POST['synopsis'] ?? '');
+        $titre = htmlspecialchars($_POST['titre'] ?? '', ENT_QUOTES, 'UTF-8');
+        $auteur = htmlspecialchars($_POST['auteur'] ?? '', ENT_QUOTES, 'UTF-8');
+        $pages = htmlspecialchars($_POST['pages'] ?? '', ENT_QUOTES, 'UTF-8');
+        $sortie = htmlspecialchars($_POST['sortie'] ?? '', ENT_QUOTES, 'UTF-8');
+        $edition = htmlspecialchars($_POST['edition'] ?? '', ENT_QUOTES, 'UTF-8');
+        $synopsis = htmlspecialchars($_POST['synopsis'] ?? '', ENT_QUOTES, 'UTF-8');
 
         // Vérification des saisies du formulaire
         

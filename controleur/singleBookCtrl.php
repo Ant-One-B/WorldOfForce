@@ -27,7 +27,7 @@ try {
             $livreId = intval($_POST['livreId']);
             $userId = intval($_POST['userId']);
             // Utiliser htmlspecialchars pour sécuriser le message
-            $message = htmlspecialchars($_POST['message']);
+            $message = htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8');
 
             // Ajoutez un commentaire et vérifiez si l'opération a réussi
             if (!addBookComment($livreId, $userId, $message)) {

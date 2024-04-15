@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../modele/show.php';
-
+// page inexistante pour les non administrateur
 if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
     include __DIR__ . "/../vue/404.php";
     exit;
@@ -52,15 +52,15 @@ try {
             throw new Exception("Le fichier n'est pas une image valide.");
         }
 
-        // Si toutes les validations sont passées avec succès, déplacez le fichier téléchargé vers le dossier de destination
+        // Si toutes les validations sont passées avec succès, déplacer le fichier téléchargé vers le dossier de destination
         if (!move_uploaded_file($_FILES['affiche']['tmp_name'], $uploadFile)) {
             throw new Exception("Erreur lors de l'upload du fichier.");
         }
 
         // Récupération des données soumises via le formulaire
-        $titre = htmlspecialchars($_POST['titre'] ?? '');
-        $acteur = htmlspecialchars($_POST['acteur'] ?? '');
-        $tmdb = htmlspecialchars($_POST['tmdb'] ?? '');
+        $titre = htmlspecialchars($_POST['titre'] ?? '', ENT_QUOTES, 'UTF-8');
+        $acteur = htmlspecialchars($_POST['acteur'] ?? '', ENT_QUOTES, 'UTF-8');
+        $tmdb = htmlspecialchars($_POST['tmdb'] ?? '', ENT_QUOTES, 'UTF-8');
 
         // Vérification des saisies du formulaire
         

@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../modele/dbUser.php';
 
-
+// page inexistante pour les non administrateur
 if (!isset($_SESSION['role']) || (isset($_SESSION['role']) && $_SESSION['role'] === 'Membre')) {
     include __DIR__ . "/../vue/404.php";
     exit;

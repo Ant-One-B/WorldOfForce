@@ -53,7 +53,7 @@ $comments = getShowComments($serieId);
         <?php endforeach;?>
     </div>
    <?php else: ?>
-        <p class='noCom'>Aucun commentaire pour ce film.</p>
+        <p class='noCom'>Aucun commentaire pour cette série.</p>
     <?php endif; ?>
 </section>
     <?php if (isset($_SESSION["pseudo"])): ?>

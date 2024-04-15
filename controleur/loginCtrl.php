@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
        
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $pseudo = htmlspecialchars($_POST['pseudo'] ?? '');
+            $pseudo = htmlspecialchars($_POST['pseudo'] ?? '', ENT_QUOTES, 'UTF-8');
             $password = $_POST['password'] ?? '';
 
             // Vérifier les informations d'identification de l'utilisateur

@@ -57,7 +57,7 @@ $comments = getBookComments($livreId); ?>
             <?php endforeach; ?>
         </div>
     <?php else: ?>
-        <p class='noCom'>Aucun commentaire pour ce film.</p>
+        <p class='noCom'>Aucun commentaire pour ce livre.</p>
     <?php endif; ?>
 </section>
     <!-- Si la session est active avec un pseudo alors on affiche le formulaire de commentaire -->
