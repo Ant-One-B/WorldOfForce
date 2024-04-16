@@ -4,11 +4,20 @@
 
 <form action="?route=contact" method="POST">
     <label for="mail">Votre email</label>
-    <input type="email" id="mail" name="mail" placeholder="exemple@exemple.fr" value= "<?php if (isset($_POST['email'])){echo $_POST['email'];}?>" required>
+    <input type="email" id="mail" name="mail" placeholder="exemple@exemple.fr"
+        value="<?php if (isset($_POST['email'])) {
+            echo $_POST['email'];
+        } ?>" required>
     <label for="objet">Objet</label>
-    <input type="text" id="objet" name="objet" placeholder="Objet" value= "<?php if (isset($_POST['objet'])){echo $_POST['objet'];}?>" required>
+    <input type="text" id="objet" name="objet" placeholder="Objet"
+        value="<?php if (isset($_POST['objet'])) {
+            echo $_POST['objet'];
+        } ?>" required>
     <label for="message">Message</label>
-    <textarea name="message" id="message" cols="30" rows="10" ><?php if (isset($_POST['message'])){echo $_POST['message'];}?></textarea>
+    <textarea name="message" id="message" cols="30"
+        rows="10"><?php if (isset($_POST['message'])) {
+            echo $_POST['message'];
+        } ?></textarea>
     <label for="rgpd"><a href="?route=mentions" class="rgpd">J'accepte les conditions générales d'utilisation du site
         </a>
         <input type="checkbox" id="rgpd" name="rgpd" required>

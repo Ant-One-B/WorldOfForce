@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($mail) || empty($objet) || empty($message)) {
             throw new Exception("Tous les champs du formulaire sont obligatoires.");
         }
-        
+
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("Adresse email invalide.");
         }

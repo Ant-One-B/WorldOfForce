@@ -63,7 +63,7 @@ try {
         $tmdb = htmlspecialchars($_POST['tmdb'] ?? '', ENT_QUOTES, 'UTF-8');
 
         // Vérification des saisies du formulaire
-        
+
         if (!preg_match("/^[0-9 ]{2,50}$/", $tmdb)) {
             throw new Exception("Référence tmdb invalide. La référence doit être un nombre");
         }

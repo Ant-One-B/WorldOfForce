@@ -2,14 +2,14 @@
 
 <h1>Les séries</h1>
 
-<?php 
+<?php
 if (!$shows) {
     echo "<p class='nop'>Aucune série trouvé.</p>";
 }
 ?>
 <div class="gridContainer">
     <div class="grid">
-        <?php 
+        <?php
         if ($shows) {
             // utilisation de foreach pour afficher les affiches des séries présentes dans la base de donnée
             foreach ($shows as $shows) {

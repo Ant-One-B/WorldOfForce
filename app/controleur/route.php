@@ -76,5 +76,5 @@ if (isset($_GET["route"])) {
     }
 } else {
     // aucune route choisie 
-     include __DIR__ . '/homeCtrl.php';
+    include __DIR__ . '/homeCtrl.php';
 }

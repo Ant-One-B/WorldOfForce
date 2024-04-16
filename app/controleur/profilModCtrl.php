@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Récupérer les données saisies par l'utilisateur
             $region = htmlspecialchars($_POST['region'], ENT_QUOTES, 'UTF-8');
             $description = htmlspecialchars($_POST['description'], ENT_QUOTES, 'UTF-8');
-            $mail= htmlspecialchars($_POST['mail'], ENT_QUOTES, 'UTF-8');
+            $mail = htmlspecialchars($_POST['mail'], ENT_QUOTES, 'UTF-8');
 
-               
+
             // Mettre à jour la région et la description de l'utilisateur dans la base de données
             $pseudo = $_SESSION['pseudo'];
             $success = updateUserInfo($pseudo, $region, $description);

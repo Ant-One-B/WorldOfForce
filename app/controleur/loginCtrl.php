@@ -1,5 +1,5 @@
 <?php
- include __DIR__ . "/../modele/loginUser.php";
+include __DIR__ . "/../modele/loginUser.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Vérification des informations d'identification de l'utilisateur
-       
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pseudo = htmlspecialchars($_POST['pseudo'] ?? '', ENT_QUOTES, 'UTF-8');

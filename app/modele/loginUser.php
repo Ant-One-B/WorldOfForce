@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/user.php'; 
+include __DIR__ . '/user.php';
 
 // Vérification de pseudo unique
 function checkIfPseudoExist($pseudo)

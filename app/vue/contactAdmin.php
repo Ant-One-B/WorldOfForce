@@ -28,14 +28,14 @@
                         </td>
 
                         <td>
-                            
-                                <form action="?route=contactadmin" method="post">
-                                    <!-- récupération de l'id du message à traiter -->
-                                    <input type="hidden" name="messageId" value="<?= $message['id_contact'] ?>">
-                                    <!-- traitement du message -->
-                                    <input type="submit" name="updateStatus" class="btn" value="Marquer comme fait">
-                                </form>
-                            
+
+                            <form action="?route=contactadmin" method="post">
+                                <!-- récupération de l'id du message à traiter -->
+                                <input type="hidden" name="messageId" value="<?= $message['id_contact'] ?>">
+                                <!-- traitement du message -->
+                                <input type="submit" name="updateStatus" class="btn" value="Marquer comme fait">
+                            </form>
+
                         </td>
                     </tr>
                 <?php endforeach; ?>

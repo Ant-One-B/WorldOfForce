@@ -7,7 +7,7 @@
 if ($messages && count($messages) > 0) {
     foreach ($messages as $message) {
         $formatted_date = date('d/m/Y', strtotime($message['dateF']));
-        
+
         echo "<div class='archive'> ";
         echo "<p><strong>Date :</strong> " . $formatted_date . "</p>";
         echo "<p><strong>Expéditeur :</strong> " . $message['mailF'] . "</p>";

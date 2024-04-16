@@ -11,7 +11,7 @@ include __DIR__ . '/../modele/contact.php'; // Inclure le modèle pour accéder 
 try {
     // Récupérer tous les messages de contact depuis la base de données
     $messages = getAllContactMessagesWait();
-   
+
 
     // Vérifier si le formulaire de mise à jour du statut a été soumis
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateStatus'])) {

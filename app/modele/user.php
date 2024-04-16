@@ -91,7 +91,8 @@ function deleteUser($pseudo)
 }
 
 
-function getUsersWithRoles() {
+function getUsersWithRoles()
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -102,7 +103,7 @@ function getUsersWithRoles() {
         $query = "SELECT id_utilisateur, pseudoU, mailU, role FROM utilisateur";
         $statement = $conn->query($query);
         $users = $statement->fetchAll(PDO::FETCH_ASSOC);
-        
+
         return $users;
     } catch (PDOException $e) {
         addError("Erreur de base de données : " . $e->getMessage());
@@ -111,7 +112,8 @@ function getUsersWithRoles() {
 }
 
 
-function updateUserRole($userId, $newRole) {
+function updateUserRole($userId, $newRole)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");

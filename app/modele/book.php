@@ -1,8 +1,9 @@
-<?php 
+<?php
 include __DIR__ . "/dbConnect.php";
 
 // ajouter un livre
-function addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, $couverture) {
+function addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, $couverture)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -29,9 +30,10 @@ function addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, $couvert
         return false;
     }
 }
-   
+
 // Fonction pour récupérer tous les livres de la base de données
-function getAllBooksCover() {
+function getAllBooksCover()
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -53,7 +55,8 @@ function getAllBooksCover() {
 
 
 // Fonction de récupération de tout les détails de livre
-function getBookDetails($id_livre) {
+function getBookDetails($id_livre)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");

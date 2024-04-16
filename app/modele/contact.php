@@ -26,7 +26,7 @@ function getAllContactMessagesWait()
 function getAllContactMessages()
 {
     $conn = connectPDO();
-    
+
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
         return false;

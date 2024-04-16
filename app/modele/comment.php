@@ -1,6 +1,7 @@
 <?php
 
-function addMovieComment($filmId, $userId, $message) {
+function addMovieComment($filmId, $userId, $message)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -39,7 +40,8 @@ function addMovieComment($filmId, $userId, $message) {
     }
 }
 
-function getMovieComments($filmId) {
+function getMovieComments($filmId)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -65,7 +67,8 @@ function getMovieComments($filmId) {
     }
 }
 
-function deleteMovieComment($commentId) {
+function deleteMovieComment($commentId)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -98,7 +101,8 @@ function deleteMovieComment($commentId) {
         return false;
     }
 }
-function addShowComment($serieId, $userId, $message) {
+function addShowComment($serieId, $userId, $message)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -138,7 +142,8 @@ function addShowComment($serieId, $userId, $message) {
     }
 }
 
-function getShowComments($serieId) {
+function getShowComments($serieId)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -163,7 +168,8 @@ function getShowComments($serieId) {
     }
 }
 
-function deleteShowComment($commentId) {
+function deleteShowComment($commentId)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -196,7 +202,8 @@ function deleteShowComment($commentId) {
         return false;
     }
 }
-function addBookComment($livreId, $userId, $message) {
+function addBookComment($livreId, $userId, $message)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -235,7 +242,8 @@ function addBookComment($livreId, $userId, $message) {
     }
 }
 
-function getBookComments($livreId) {
+function getBookComments($livreId)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");
@@ -261,7 +269,8 @@ function getBookComments($livreId) {
     }
 }
 
-function deleteBookComment($commentId) {
+function deleteBookComment($commentId)
+{
     $conn = connectPDO();
     if (!$conn) {
         addError("Erreur de base de données : Connexion non établie.");

@@ -32,7 +32,7 @@
 </div>
 
 <!-- Bouton pour ouvrir la boîte de dialogue modale -->
-<button id="openModal" class="btn delete" >Supprimer mon compte</button>
+<button id="openModal" class="btn delete">Supprimer mon compte</button>
 
 
 

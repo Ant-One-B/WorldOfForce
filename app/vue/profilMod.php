@@ -3,7 +3,7 @@
 
 <form action="?route=modifierprofil" method="post">
     <label for="mail">Mail :</label>
-    <input type="mail" id="mail" name="mail" value="<?= $util['mailU']?>">
+    <input type="mail" id="mail" name="mail" value="<?= $util['mailU'] ?>">
     <label for="region">Région :</label>
     <input type="text" id="region" name="region" value="<?= $util['region'] ?>">
     <label for="description">Description :</label>

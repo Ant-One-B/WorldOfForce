@@ -66,12 +66,12 @@ try {
         $synopsis = htmlspecialchars($_POST['synopsis'] ?? '', ENT_QUOTES, 'UTF-8');
 
         // Vérification des saisies du formulaire
-        
+
         if (!preg_match("/^[0-9 ]{2,50}$/", $pages)) {
             throw new Exception("Nombres de pages invalide. Entrez un nombre");
         }
         // Ajout du livre avec les données validées
-        
+
         if (addBook($titre, $auteur, $pages, $edition, $sortie, $synopsis, 'statics/images/upload/' . $fileName)) {
             header('Location: ?route=adminlivre');
             addMessage('livre ajouté !');

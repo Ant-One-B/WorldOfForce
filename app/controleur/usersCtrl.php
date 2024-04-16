@@ -26,15 +26,16 @@ try {
             } else {
                 throw new Exception("Une erreur s'est produite lors de la mise à jour du rôle de l'utilisateur.");
             }
-        } if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] !== "Fenrae") {
+        }
+        if (isset($_POST['pseudoToDelete']) && $_POST['pseudoToDelete'] !== "Fenrae") {
             // Suppression d'un compte utilisateur
             $deleteUserPseudo = $_POST['pseudoToDelete'];
-            
+
             // Appeler la fonction pour supprimer l'utilisateur
             if (deleteUser($deleteUserPseudo)) {
                 // Suppression réussie
                 header("Location: ?route=users"); // Redirection vers la liste des utilisateurs après la suppression
-                addMessage(''. $deleteUserPseudo .' à bien été supprimé.');
+                addMessage('' . $deleteUserPseudo . ' à bien été supprimé.');
                 exit();
             } else {
                 throw new Exception("Une erreur s'est produite lors de la suppression du compte utilisateur.");

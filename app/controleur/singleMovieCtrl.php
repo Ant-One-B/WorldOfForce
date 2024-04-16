@@ -1,4 +1,4 @@
-<?php 
+<?php
 include __DIR__ . '/../modele/movie.php';
 include __DIR__ . '/../modele/comment.php';
 
@@ -25,7 +25,7 @@ try {
         }
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['filmId'], $_POST['userId'], $_POST['message'])) {
-            $filmId = intval($_POST['filmId']); 
+            $filmId = intval($_POST['filmId']);
             $userId = intval($_POST['userId']);
             // Utiliser htmlspecialchars pour sécuriser le message 
             $message = htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8');
@@ -33,7 +33,7 @@ try {
             // Ajouter un commentaire et vérifier si l'opération a réussi
             if (!addMovieComment($filmId, $userId, $message)) {
                 throw new Exception("Une erreur s'est produite lors de l'ajout du commentaire.");
-            }else {
+            } else {
                 addMessage('Commentaire posté !');
             }
         } else {

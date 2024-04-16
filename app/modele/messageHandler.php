@@ -1,7 +1,8 @@
 <?php
 
 // Fonction pour ajouter une erreur
-function addError($errorMessage) {
+function addError($errorMessage)
+{
     if (!isset($_SESSION['errors'])) {
         $_SESSION['errors'] = [];
     }
@@ -9,7 +10,8 @@ function addError($errorMessage) {
 }
 
 // Fonction pour récupérer les erreurs
-function getErrors() {
+function getErrors()
+{
     if (isset($_SESSION['errors'])) {
         $errors = $_SESSION['errors'];
         unset($_SESSION['errors']); // Efface les erreurs après les avoir récupérées
@@ -19,7 +21,8 @@ function getErrors() {
 }
 
 // Fonction pour ajouter un message
-function addMessage($message) {
+function addMessage($message)
+{
     if (!isset($_SESSION['messages'])) {
         $_SESSION['messages'] = [];
     }
@@ -27,7 +30,8 @@ function addMessage($message) {
 }
 
 // Fonction pour récupérer les messages
-function getMessages() {
+function getMessages()
+{
     if (isset($_SESSION['messages'])) {
         $messages = $_SESSION['messages'];
         unset($_SESSION['messages']); // Efface les messages après les avoir récupérés
