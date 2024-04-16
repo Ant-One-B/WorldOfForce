@@ -15,8 +15,8 @@ if (isset($_POST['acceptCookies'])) {
 }
 
 
-include __DIR__ . '/controleur/route.php';
 
+require __DIR__ . '/app/controleur/route.php';
 
 
 

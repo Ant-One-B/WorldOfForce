@@ -1,0 +1,15 @@
+### Forbid access _ World Of force
+
+# Interdire le listing des repertoires
+Options -Indexes
+
+RewriteEngine On
+
+# Interdire l'acces aux dossiers non statiques (ici pour le dossier app)
+RewriteRule ^(app) - [R=403,L]
+
+# Interdire l'acces au fichier .env 
+<FilesMatch "^.env$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
