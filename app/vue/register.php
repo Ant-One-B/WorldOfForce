@@ -4,7 +4,7 @@
 <!-- formualire d'inscription -->
 <form action="?route=inscription" method="post">
     <label for="pseudo">Pseudo :</label>
-    <input type="text" id="pseudo" name="pseudo" value="<?php if (isset($_POST['pseudo'])) {
+    <input type="text" id="pseudo" name="pseudo" placeholder="3 caractéres, lettres et chiffres uniquement" value="<?php if (isset($_POST['pseudo'])) {
         echo $_POST['pseudo'];
     } ?>"
         required>
