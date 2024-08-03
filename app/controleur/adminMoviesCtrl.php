@@ -15,7 +15,7 @@ try {
         }
 
         // Dossier de téléchargement
-        $uploadDir = __DIR__ . '/../statics/images/upload/';
+        $uploadDir = __DIR__ . '../../statics/images/upload/';
 
         // Nom du fichier téléchargé
         $fileName = basename($_FILES['affiche']['name']);
