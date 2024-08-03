@@ -1,5 +1,10 @@
 {
-    "name": "kercode23/world-of-force",
+    "name": "antoine/world-of-force",
+    "autoload": {
+        "psr-4": {
+            "Antoine\\WorldOfForce\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Antoine Boeraeve",
