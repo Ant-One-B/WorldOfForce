@@ -28,4 +28,4 @@ Deux utilisateurs ont été créés :
 3. Admin - admin@kercode.com - Admin@kercode1
 
 ## Lien du site
-[World of force](http://greta-bretagne-sud.fr/stagiaires-kercode/antoine-boeraeve/World-of-force/)
+Le site n'est plus en ligne suite à la fin de la formation.
